@@ -357,20 +357,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#parte-2-melhorando-desempenho" class="md-nav__link">
-    Parte 2 - Melhorando desempenho
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alterando-a-frequencia-de-operacao" class="md-nav__link">
-    Alterando a frequência de operação
-  </a>
-  
-</li>
-      
       
       
       
@@ -460,20 +446,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#parte-2-melhorando-desempenho" class="md-nav__link">
-    Parte 2 - Melhorando desempenho
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alterando-a-frequencia-de-operacao" class="md-nav__link">
-    Alterando a frequência de operação
-  </a>
-  
-</li>
-      
       
       
       
@@ -556,112 +528,6 @@ Embarcada</a></p>
 <p class="admonition-title">Note</p>
 <p>Reparou que o sistema de modo geral está muito lento? Vamos melhorar isso!</p>
 </div>
-<h2 id="parte-2-melhorando-desempenho">Parte 2 - Melhorando desempenho<a class="headerlink" href="#parte-2-melhorando-desempenho" title="Permanent link">&para;</a></h2>
-<p>Assim como qualquer sistema microprocessado podemos ajustar diversos parâmetros interno de funcionamento do microcontrolador. Sendo o clock (frequência de operação) um dos fatores que possui grande impacto na aplicação. </p>
-<p>É natural pensarmos que quanto maior a frequência do clock maior será o gasto energético de um sistema, lembre de camada física onde vimos que o gasto energético em sistemas digitais construídos com MOSFET é:</p>
-<p><span><span class="MathJax_Preview">\alpha C V_{DD}^2 f</span><script type="math/tex">\alpha C V_{DD}^2 f</script></span></p>
-<p>onde :</p>
-<ul>
-<li>alpha : fator de chaveamento (influenciado pelo código)</li>
-<li>C : capacitância</li>
-<li>V : tensão de operação</li>
-<li>f : frequência de chaveamento</li>
-</ul>
-<p>Portanto quanto maior a frequência de chaveamento maior será o gasto energético do sistema, mas um detalhe deve ser levado em consideração: quanto maior a frequência do clock mais rápido uma tarefa é realizada e mais rapidamente um sistema pode entrar em modo de baixo consumo energético <em>sleep mode, suspensão, ....</em>.</p>
-<blockquote>
-<p>Recentemente o kernel do linux removeu o perfil <em>ondemand</em> de seus <a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=MTM3NDQ">modos de operação</a>, esse modo alterava dinamicamente a frequência de operação do processador para alta quando uma grande carga de processamento era demandada e para mais baixa quando o processador estava em baixo uso.</p>
-<p>A ideia inicial disso era a melhoria do consumo energético já que o processador se ajustava a demanda do sistema. Porém detectou-se que isso não era verdade, já que esse modo tardava o processador de entrar no modo de <em>sleep</em> mais profundo além de demandar processamento para verificar a carga atual do processador.</p>
-</blockquote>
-<h2 id="alterando-a-frequencia-de-operacao">Alterando a frequência de operação<a class="headerlink" href="#alterando-a-frequencia-de-operacao" title="Permanent link">&para;</a></h2>
-<p>O arquivo .h localizado em: <code>src/config/conf_clock.h</code> é responsável pela configuração do clock do microcontrolador. Note que no trecho de código referente ao <code>Prescaler</code> existem diversas opções que podem ser escolhidas, a atual está definda como:</p>
-<div class="codehilite"><pre><span></span><span class="c1">// ===== Processor Clock (HCLK) Prescaler Options   (Fhclk = Fsys / (SYSCLK_PRES))</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_1</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_2</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_4</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_8</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_16</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_32</span>
-<span class="cp">#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_64</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_3</span>
-</pre></div>
-
-<p>Onde <code>Fsys</code> é equivalente a <strong>300Mhz</strong>. Na configuração inicial a frequência do processador é 300Mhz/64 = 4.5 MHz, altere esse trecho para a forma a seguir, selecionando a frequência do principal do uC para 300Mhz.</p>
-<div class="codehilite"><pre><span></span><span class="c1">// ===== Processor Clock (HCLK) Prescaler Options   (Fhclk = Fsys / (SYSCLK_PRES))</span>
-<span class="cp">#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_1</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_2</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_4</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_8</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_16</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_32</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_64</span>
-<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_3</span>
-</pre></div>
-
-<div class="box">
- Compile e embarque o firmware com essa mudança.
-
- - Verifique a nova velocidade de atualização do LCD
-</div>
-
-<h1 id="como-isso-funciona">Como isso funciona ?<a class="headerlink" href="#como-isso-funciona" title="Permanent link">&para;</a></h1>
-<p>Em uma visão mais geral podemos analisar o sistema como um kit de desenvolvimento e um display LCD:</p>
-<p><img alt="Diagrama simplificado" src="../imgs/day1-Embarcados/diagrama-simplificado.pdf.png" width="40%" /></p>
-<h2 id="sistema-detalhado">Sistema detalhado<a class="headerlink" href="#sistema-detalhado" title="Permanent link">&para;</a></h2>
-<p>Uma análise mais detalhada do projeto pode ser visto no diagrama de blocos a seguir:</p>
-<p><img alt="Diagrama detalhado" src="../imgs/day1-Embarcados/diagrama-detalhado.pdf.png" /></p>
-<p>Esse projeto é implementando em um kit de desenvolvimento para microcontroladores ARM Cortex M7 do fabricante Microchip/ATMEL (a ARM não fabrica chips, somente propriedade intelectual). Esse microcontrolador é chamado de <strong>SAME70</strong> e o kit de desenvolvimento <strong>SAME70-XPLD</strong>. O kit possui além do microcontrolador toda a infraestrutura necessária para o seu funcionamento e mais alguns periféricos que podem ser úteis no desenvolvimento de um projeto (gerenciador de energia, gravador, memória, botão, led).</p>
-<p>Pelo diagrama detalhado nota-se que a comunicação do uC com o LCD é realizado via uma interface serial (lembra da <code>UART</code> de Camada Física? aqui usa-se uma outra comunicação similar chamada de <code>SPI</code>). No módulo do LCD um chip dedicado para o controle do display (<code>ili9488</code>, da mesma família do display de elementos de sistema) recebe instruções do uC e atualiza o LCD.</p>
-<blockquote>
-<p>Microcontroladores não necessitam geralmente de memória externa para o seu funcionamento, porém é a mesma deve sert utilizada quando a aplicação necessita de uma quantidade razoável de memória. No caso desse microcontrolador possui internamente "somente":</p>
-<ul>
-<li>384 KBytes de RAM</li>
-<li>2   MBytes de ROM</li>
-</ul>
-<p>"somente" se compararmos com a capacidade de armazenamento de um computador, mas se compararmos com outros microcontroladores esse possui <strong>muita</strong> memória.</p>
-</blockquote>
-<p>Essa memoria interna do uC não foi suficiente para a nossa aplicação de exemplo, tivermos que recorrer a essa memória externa (SDRAM).</p>
-<h2 id="microcontrolador">microcontrolador<a class="headerlink" href="#microcontrolador" title="Permanent link">&para;</a></h2>
-<p>Podemos detalhar ainda mais o sistema se detalharmos o que está sendo usado no microcontrolador, entendendo todas as partes em uso. Pelo diagrama podemos notar os seguintes "periféricos":</p>
-<ul>
-<li>CORE M7: Unidade de processamento ARM.</li>
-<li>RAM: Unidade de memória que é usada durante execução (variáveis).</li>
-<li>ROM: Unidade de memória usada para armazenar o programa e constantes .</li>
-<li>External Memory Controller: Periférico responsável por gerenciar uma memória externa.</li>
-<li>SPI: Periférico responsável pela comunicação serial SPI e interface com o módulo LCD.</li>
-<li>PIO: Periférico responsável pela interface com entradas e saídas digitais (Parallel Input/OutPut).</li>
-</ul>
-<p><img alt="Microcontrolador detalhado" src="../imgs/day1-Embarcados/diagrama-uC.pdf.png" width="80%" />.</p>
-<h1 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">&para;</a></h1>
-<p>O arquivo principal desse projeto é o <code>main.c</code> (é muito comum em C a função main() estar no arquivo main.c, mas não é necessário), esse código fonte possui a função <code>main()</code> que é a primeira a ser chamada na inicialização do sistema. Nessa função inicializa-se primeiro o sistema embarcado e seus periféricos (clock, LCD, botão, memória) via a chamada de função <code>initBoardMutirao()</code>. Após inicializado a placa chama-se a função <code>imgshow(...)</code> que possui toda a parte responsável por exibir a imagem no LCD. </p>
-<p>Trecho do arquivo <code>main.c</code></p>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-    <span class="kt">uint32_t</span> <span class="n">time</span><span class="p">;</span>            <span class="c1">// variavel para armazenar tempo de processamento</span>
-    <span class="kt">uint8_t</span>  <span class="n">imageSelect</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// variavle para selecao da imagem a ser exibida</span>
-                              <span class="c1">// quando o botao for pressionado</span>
-                              <span class="c1">// 1 = imagem processada</span>
-                              <span class="c1">// 0 = imagem orignal</span>
-
-    <span class="c1">// inicializa placa e seus perifericos</span>
-    <span class="n">initBoardMutirao</span><span class="p">();</span>
-
-    <span class="c1">// exibe imagem orignal, tempo de processamento suprimido.</span>
-    <span class="n">imgShow</span><span class="p">(</span><span class="n">imgRaw</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-
-    <span class="p">...</span>
-</pre></div>
-
-<p>A função <code>imgShow`` possui dois parâmetros a imagem</code>image[320][320]` a ser exibida, passada como uma matriz de tamanho já definido, e o tempo de processamento a ser exibido no LCD:</p>
-<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">imgShow</span><span class="p">(</span><span class="n">ili9488_color_t</span> <span class="n">image</span><span class="p">[</span><span class="mi">320</span><span class="p">][</span><span class="mi">320</span><span class="p">],</span> <span class="kt">uint32_t</span> <span class="n">time</span><span class="p">){...}</span>
-</pre></div>
-
-<p>Após essa etapa o microcontrolador entra em um loop infinito (<code>while(1){}</code>) que verifica uma variável chamada de <code>buttonFlag</code> que é alterada via uma interrupção para o valor <strong>1</strong> sempre que o botão for pressionado. </p>
-<div class="codehilite"><pre><span></span><span class="c1">// super loop</span>
-    <span class="c1">// aplicacoes embarcadas não devem sair do while(1).</span>
-    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="c1">// se buttonFlag = 1 existe alteracao no estado do botao</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">buttonFlag</span><span class="p">){</span>
-</pre></div>
                 
                   
                 
