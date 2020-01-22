@@ -1,0 +1,746 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Embarcados - Parte 1 - 5s - Mutirao C - Insper Comp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#embarcados-parte-1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="5s - Mutirao C - Insper Comp" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">developer_board</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              5s - Mutirao C - Insper Comp
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Embarcados - Parte 1
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/insper/mutiraoC/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Insper/mutiraoC
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" class="md-tabs__link md-tabs__link--active">
+          Day one
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="5s - Mutirao C - Insper Comp" class="md-nav__button md-logo">
+      
+        <i class="md-icon">developer_board</i>
+      
+    </a>
+    5s - Mutirao C - Insper Comp
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/insper/mutiraoC/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Insper/mutiraoC
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Day one
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Day one
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Embarcados - Parte 1
+      </label>
+    
+    <a href="./" title="Embarcados - Parte 1" class="md-nav__link md-nav__link--active">
+      Embarcados - Parte 1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1" class="md-nav__link">
+    Parte 1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conectando-o-lcd" class="md-nav__link">
+    Conectando o LCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atmelstudio" class="md-nav__link">
+    AtmelStudio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilar-e-programar" class="md-nav__link">
+    Compilar e programar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testando" class="md-nav__link">
+    Testando
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-melhorando-desempenho" class="md-nav__link">
+    Parte 2 - Melhorando desempenho
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alterando-a-frequencia-de-operacao" class="md-nav__link">
+    Alterando a frequência de operação
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../day1-embarcados-parte2/" title="Embarcados - Parte 2" class="md-nav__link">
+      Embarcados - Parte 2
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parte-1" class="md-nav__link">
+    Parte 1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conectando-o-lcd" class="md-nav__link">
+    Conectando o LCD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atmelstudio" class="md-nav__link">
+    AtmelStudio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilar-e-programar" class="md-nav__link">
+    Compilar e programar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testando" class="md-nav__link">
+    Testando
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parte-2-melhorando-desempenho" class="md-nav__link">
+    Parte 2 - Melhorando desempenho
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alterando-a-frequencia-de-operacao" class="md-nav__link">
+    Alterando a frequência de operação
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Insper/mutiraoC/edit/master/docs-src/day1-embarcados.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="embarcados-parte-1">Embarcados - Parte 1<a class="headerlink" href="#embarcados-parte-1" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Essa atividade demanda sistema operacional Windows, conforme descrito na infra de <a href="https://insper.github.io/ComputacaoEmbarcada/Sobre-Ferramental/">Computação
+Embarcada</a></p>
+</div>
+<p>Nessa aula iremos trabalhar com os conceitos básicos da linguagem C aplicados ao processamento de imagem em sistemas embarcados. Para isso utilizaremos um kit de desenvolvimento com um microcontrolador ARM cortex M7 e um LCD colorido de 480x320 px conectado a esse kit. </p>
+<p><img alt="Resultado" src="../imgs/day1-Embarcados/resultado.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Detalhe do material utilizado</p>
+<ul>
+<li>Kit : <a href="http://www.microchip.com/DevelopmentTools/ProductDetails.aspx?PartNO=ATSAME70-XPLD">SAME70-XPLD</a></li>
+<li>Microcontrolador : <a href="https://www.youtube.com/watch?v=GaV1j_5UVys">ARM Cortex M7</a></li>
+<li>LCD : <a href="http://www.microchip.com/Developmenttools/ProductDetails.aspx?PartNO=ATMXT-XPRO">maXTouch Xplained Pro</a></li>
+</ul>
+</div>
+<h2 id="parte-1">Parte 1<a class="headerlink" href="#parte-1" title="Permanent link">&para;</a></h2>
+<p>Nesse primeira etapa iremos executar um código exemplo no sistema embarcado, para isso será necessário:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Conectar o LCD ao kit</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Conectar o kit no computador</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Abrir e compilar o projeto no AtmelStudio</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Programar o microcontrolador</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Validar o resultado esperado</li>
+</ul>
+<p>Antes de prosseguir você deve ter o repositório <strong>Labs C</strong> já clonado no seu computador (Windows).</p>
+<h3 id="conectando-o-lcd">Conectando o LCD<a class="headerlink" href="#conectando-o-lcd" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Tome cuidado ao manusear a placa, não coloque ela sobre outros materiais.</p>
+</div>
+<p><img alt="Ligação SAME70 Explained" src="../imgs/day1-Embarcados/ligacao_1.jpg" style="width:400px" /></p>
+<p><img alt="Ligação maxTouch" src="../imgs/day1-Embarcados/ligacao_2.jpg" style="width:400px" /></p>
+<div class="admonition note">
+<p>Considerando que os <a href="https://insper.github.io/ComputacaoEmbarcada/Sobre-Ferramental/#softwares">pré requisitos</a>  para a disciplina de Computação Embarcada já foram instalados.</p>
+</div>
+<p>Conectar o USB do programador no computador:</p>
+<p><img alt="USB DEBUG" src="../imgs/day1-Embarcados/USB-DEBUG.png" width="40%" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Note que a placa possui dois USB: <code>DEBUG USB</code>, usado para programar o uC e <code>TARGET USB</code> usado para projetos que demandam conectividade via USB.</p>
+</div>
+<h3 id="atmelstudio">AtmelStudio<a class="headerlink" href="#atmelstudio" title="Permanent link">&para;</a></h3>
+<p>Abra o projeto exemplo (<code>SAME70-MutiraoC</code>) localizado no repositório do mutirão</p>
+<ul>
+<li><code>http://github.com/insper/MutiraoC/01-DayOne/SAEM70-MutiraoC</code></li>
+</ul>
+<p>O projeto irá abrir na IDE do AtmelStudio como imagem a seguir:</p>
+<p><img alt="Atmel Studio" src="../imgs/day1-Embarcados/atmelStudio.png" />.</p>
+<h3 id="compilar-e-programar">Compilar e programar<a class="headerlink" href="#compilar-e-programar" title="Permanent link">&para;</a></h3>
+<p>A etapa atual será a de embarcar o código exemplo no uC, para isso basta clicar em <strong>Start Without Debug</strong>:</p>
+<p><img alt="Embarcando" src="../imgs/day1-Embarcados/atmelStudio-play.png" width="30%" />.</p>
+<h3 id="testando">Testando<a class="headerlink" href="#testando" title="Permanent link">&para;</a></h3>
+<p>Uma vez embarcado o exemplo o LCD deverá exibir uma imagem. A primeira imagem que aparece é a imagem original sem nenhum tipo de modificação, ao apertar o botão <strong>SW0</strong> do kit de desenvolvimento uma função (<strong>imageProcess()</strong>) é chamada e a imagem orignal é processada e seu resultado exibido na tela (junto com o tempo de processamento).</p>
+<p><img alt="SAEM70-XPLD SW0" src="../imgs/day1-Embarcados/SAME70-SW0.png" width="30%" />.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Se pressionar o outro botão o uC será reiniciado (reset).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reparou que o sistema de modo geral está muito lento? Vamos melhorar isso!</p>
+</div>
+<h2 id="parte-2-melhorando-desempenho">Parte 2 - Melhorando desempenho<a class="headerlink" href="#parte-2-melhorando-desempenho" title="Permanent link">&para;</a></h2>
+<p>Assim como qualquer sistema microprocessado podemos ajustar diversos parâmetros interno de funcionamento do microcontrolador. Sendo o clock (frequência de operação) um dos fatores que possui grande impacto na aplicação. </p>
+<p>É natural pensarmos que quanto maior a frequência do clock maior será o gasto energético de um sistema, lembre de camada física onde vimos que o gasto energético em sistemas digitais construídos com MOSFET é:</p>
+<p><span><span class="MathJax_Preview">\alpha C V_{DD}^2 f</span><script type="math/tex">\alpha C V_{DD}^2 f</script></span></p>
+<p>onde :</p>
+<ul>
+<li>alpha : fator de chaveamento (influenciado pelo código)</li>
+<li>C : capacitância</li>
+<li>V : tensão de operação</li>
+<li>f : frequência de chaveamento</li>
+</ul>
+<p>Portanto quanto maior a frequência de chaveamento maior será o gasto energético do sistema, mas um detalhe deve ser levado em consideração: quanto maior a frequência do clock mais rápido uma tarefa é realizada e mais rapidamente um sistema pode entrar em modo de baixo consumo energético <em>sleep mode, suspensão, ....</em>.</p>
+<blockquote>
+<p>Recentemente o kernel do linux removeu o perfil <em>ondemand</em> de seus <a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=MTM3NDQ">modos de operação</a>, esse modo alterava dinamicamente a frequência de operação do processador para alta quando uma grande carga de processamento era demandada e para mais baixa quando o processador estava em baixo uso.</p>
+<p>A ideia inicial disso era a melhoria do consumo energético já que o processador se ajustava a demanda do sistema. Porém detectou-se que isso não era verdade, já que esse modo tardava o processador de entrar no modo de <em>sleep</em> mais profundo além de demandar processamento para verificar a carga atual do processador.</p>
+</blockquote>
+<h2 id="alterando-a-frequencia-de-operacao">Alterando a frequência de operação<a class="headerlink" href="#alterando-a-frequencia-de-operacao" title="Permanent link">&para;</a></h2>
+<p>O arquivo .h localizado em: <code>src/config/conf_clock.h</code> é responsável pela configuração do clock do microcontrolador. Note que no trecho de código referente ao <code>Prescaler</code> existem diversas opções que podem ser escolhidas, a atual está definda como:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// ===== Processor Clock (HCLK) Prescaler Options   (Fhclk = Fsys / (SYSCLK_PRES))</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_1</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_2</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_4</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_8</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_16</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_32</span>
+<span class="cp">#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_64</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_3</span>
+</pre></div>
+
+<p>Onde <code>Fsys</code> é equivalente a <strong>300Mhz</strong>. Na configuração inicial a frequência do processador é 300Mhz/64 = 4.5 MHz, altere esse trecho para a forma a seguir, selecionando a frequência do principal do uC para 300Mhz.</p>
+<div class="codehilite"><pre><span></span><span class="c1">// ===== Processor Clock (HCLK) Prescaler Options   (Fhclk = Fsys / (SYSCLK_PRES))</span>
+<span class="cp">#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_1</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_2</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_4</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_8</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_16</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_32</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_64</span>
+<span class="c1">//#define CONFIG_SYSCLK_PRES          SYSCLK_PRES_3</span>
+</pre></div>
+
+<div class="box">
+ Compile e embarque o firmware com essa mudança.
+
+ - Verifique a nova velocidade de atualização do LCD
+</div>
+
+<h1 id="como-isso-funciona">Como isso funciona ?<a class="headerlink" href="#como-isso-funciona" title="Permanent link">&para;</a></h1>
+<p>Em uma visão mais geral podemos analisar o sistema como um kit de desenvolvimento e um display LCD:</p>
+<p><img alt="Diagrama simplificado" src="../imgs/day1-Embarcados/diagrama-simplificado.pdf.png" width="40%" /></p>
+<h2 id="sistema-detalhado">Sistema detalhado<a class="headerlink" href="#sistema-detalhado" title="Permanent link">&para;</a></h2>
+<p>Uma análise mais detalhada do projeto pode ser visto no diagrama de blocos a seguir:</p>
+<p><img alt="Diagrama detalhado" src="../imgs/day1-Embarcados/diagrama-detalhado.pdf.png" /></p>
+<p>Esse projeto é implementando em um kit de desenvolvimento para microcontroladores ARM Cortex M7 do fabricante Microchip/ATMEL (a ARM não fabrica chips, somente propriedade intelectual). Esse microcontrolador é chamado de <strong>SAME70</strong> e o kit de desenvolvimento <strong>SAME70-XPLD</strong>. O kit possui além do microcontrolador toda a infraestrutura necessária para o seu funcionamento e mais alguns periféricos que podem ser úteis no desenvolvimento de um projeto (gerenciador de energia, gravador, memória, botão, led).</p>
+<p>Pelo diagrama detalhado nota-se que a comunicação do uC com o LCD é realizado via uma interface serial (lembra da <code>UART</code> de Camada Física? aqui usa-se uma outra comunicação similar chamada de <code>SPI</code>). No módulo do LCD um chip dedicado para o controle do display (<code>ili9488</code>, da mesma família do display de elementos de sistema) recebe instruções do uC e atualiza o LCD.</p>
+<blockquote>
+<p>Microcontroladores não necessitam geralmente de memória externa para o seu funcionamento, porém é a mesma deve sert utilizada quando a aplicação necessita de uma quantidade razoável de memória. No caso desse microcontrolador possui internamente "somente":</p>
+<ul>
+<li>384 KBytes de RAM</li>
+<li>2   MBytes de ROM</li>
+</ul>
+<p>"somente" se compararmos com a capacidade de armazenamento de um computador, mas se compararmos com outros microcontroladores esse possui <strong>muita</strong> memória.</p>
+</blockquote>
+<p>Essa memoria interna do uC não foi suficiente para a nossa aplicação de exemplo, tivermos que recorrer a essa memória externa (SDRAM).</p>
+<h2 id="microcontrolador">microcontrolador<a class="headerlink" href="#microcontrolador" title="Permanent link">&para;</a></h2>
+<p>Podemos detalhar ainda mais o sistema se detalharmos o que está sendo usado no microcontrolador, entendendo todas as partes em uso. Pelo diagrama podemos notar os seguintes "periféricos":</p>
+<ul>
+<li>CORE M7: Unidade de processamento ARM.</li>
+<li>RAM: Unidade de memória que é usada durante execução (variáveis).</li>
+<li>ROM: Unidade de memória usada para armazenar o programa e constantes .</li>
+<li>External Memory Controller: Periférico responsável por gerenciar uma memória externa.</li>
+<li>SPI: Periférico responsável pela comunicação serial SPI e interface com o módulo LCD.</li>
+<li>PIO: Periférico responsável pela interface com entradas e saídas digitais (Parallel Input/OutPut).</li>
+</ul>
+<p><img alt="Microcontrolador detalhado" src="../imgs/day1-Embarcados/diagrama-uC.pdf.png" width="80%" />.</p>
+<h1 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">&para;</a></h1>
+<p>O arquivo principal desse projeto é o <code>main.c</code> (é muito comum em C a função main() estar no arquivo main.c, mas não é necessário), esse código fonte possui a função <code>main()</code> que é a primeira a ser chamada na inicialização do sistema. Nessa função inicializa-se primeiro o sistema embarcado e seus periféricos (clock, LCD, botão, memória) via a chamada de função <code>initBoardMutirao()</code>. Após inicializado a placa chama-se a função <code>imgshow(...)</code> que possui toda a parte responsável por exibir a imagem no LCD. </p>
+<p>Trecho do arquivo <code>main.c</code></p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">uint32_t</span> <span class="n">time</span><span class="p">;</span>            <span class="c1">// variavel para armazenar tempo de processamento</span>
+    <span class="kt">uint8_t</span>  <span class="n">imageSelect</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// variavle para selecao da imagem a ser exibida</span>
+                              <span class="c1">// quando o botao for pressionado</span>
+                              <span class="c1">// 1 = imagem processada</span>
+                              <span class="c1">// 0 = imagem orignal</span>
+
+    <span class="c1">// inicializa placa e seus perifericos</span>
+    <span class="n">initBoardMutirao</span><span class="p">();</span>
+
+    <span class="c1">// exibe imagem orignal, tempo de processamento suprimido.</span>
+    <span class="n">imgShow</span><span class="p">(</span><span class="n">imgRaw</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+
+    <span class="p">...</span>
+</pre></div>
+
+<p>A função <code>imgShow`` possui dois parâmetros a imagem</code>image[320][320]` a ser exibida, passada como uma matriz de tamanho já definido, e o tempo de processamento a ser exibido no LCD:</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">imgShow</span><span class="p">(</span><span class="n">ili9488_color_t</span> <span class="n">image</span><span class="p">[</span><span class="mi">320</span><span class="p">][</span><span class="mi">320</span><span class="p">],</span> <span class="kt">uint32_t</span> <span class="n">time</span><span class="p">){...}</span>
+</pre></div>
+
+<p>Após essa etapa o microcontrolador entra em um loop infinito (<code>while(1){}</code>) que verifica uma variável chamada de <code>buttonFlag</code> que é alterada via uma interrupção para o valor <strong>1</strong> sempre que o botão for pressionado. </p>
+<div class="codehilite"><pre><span></span><span class="c1">// super loop</span>
+    <span class="c1">// aplicacoes embarcadas não devem sair do while(1).</span>
+    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// se buttonFlag = 1 existe alteracao no estado do botao</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">buttonFlag</span><span class="p">){</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../day1-embarcados-parte2/" title="Embarcados - Parte 2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Embarcados - Parte 2
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 / Marcelo Hashimoto, Igor Montagner, Rafael Corsi, Eduardo Marossi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
