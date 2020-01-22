@@ -1,0 +1,899 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Lab2 - Praticando - 5s - Mutirao C - Insper Comp</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="pink">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#lab2-praticando" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="5s - Mutirao C - Insper Comp" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">developer_board</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              5s - Mutirao C - Insper Comp
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Lab2 - Praticando
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/insper/mutiraoC/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Insper/mutiraoC
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../day1-embarcados/" class="md-tabs__link">
+          Day one
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../Lab1/" class="md-tabs__link md-tabs__link--active">
+          Labs
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="5s - Mutirao C - Insper Comp" class="md-nav__button md-logo">
+      
+        <i class="md-icon">developer_board</i>
+      
+    </a>
+    5s - Mutirao C - Insper Comp
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/insper/mutiraoC/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Insper/mutiraoC
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Day one
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Day one
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Embarcados
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Embarcados
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../day1-embarcados/" title="Parte 1" class="md-nav__link">
+      Parte 1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../day1-embarcados-parte2/" title="Parte 2" class="md-nav__link">
+      Parte 2
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../day1-sysHwSw.pdf" title="Sys HW/SW" class="md-nav__link">
+      Sys HW/SW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../day1-desafios.pdf" title="Desafios" class="md-nav__link">
+      Desafios
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Labs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Labs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab1/" title="Lab 1 - Conceitos Básicos" class="md-nav__link">
+      Lab 1 - Conceitos Básicos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab2 - Praticando
+      </label>
+    
+    <a href="./" title="Lab2 - Praticando" class="md-nav__link md-nav__link--active">
+      Lab2 - Praticando
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-avancados" class="md-nav__link">
+    Exercícios Avançados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apendice" class="md-nav__link">
+    Apêndice
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-avancados" class="md-nav__link">
+    Exercícios Avançados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apendice" class="md-nav__link">
+    Apêndice
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Insper/mutiraoC/edit/master/docs-src/Lab2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="lab2-praticando">Lab2 - Praticando<a class="headerlink" href="#lab2-praticando" title="Permanent link">&para;</a></h1>
+<p>Agora que praticamos um pouco no papel (de novo, habilidade fundamental para
+qualquer programador), vamos voltar ao computador, mas em um ambiente mais geral
+que o Atmel.</p>
+<p>Na verdade, o verdadeiro ambiente será apresentado na leitura que passaremos
+para terça e na primeira aula de quarta, mas por enquanto vamos usar um mais
+simples, que não exige instalação.</p>
+<div class="admonition note">
+<p>Entre no site <code>https://www.onlinegdb.com/online_c_compiler</code>.
+Como mencionado, esse ambiente é muito simples: vamos apenas
+digitar o código e rodá-lo através do botão verde "Run".</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Nesse exercício não é necessário esperar a validação de um professor.</p>
+</div>
+<p>Vamos começar analisando o código que já vem pronto no ambiente.</p>
+<div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>Novamente, temos um código curto mas com vários conceitos importantes:</p>
+<ul>
+<li>
+<p>a função <code>main</code> equivale ao método <code>main</code> em Java, ou seja, é a função
+  <em>principal</em>, chamada quando o programa é rodado;</p>
+</li>
+<li>
+<p>diferente de Java, no entanto, essa função é <code>int</code> em vez de <code>void</code>, pois
+  devolve um código que indica se o programa foi bem-sucedido ou não;</p>
+</li>
+<li>
+<p>por enquanto, consideraremos apenas a devolução do código <code>0</code>, que indica que
+  o programa foi, sim,  bem-sucedido;</p>
+</li>
+<li>
+<p><code>#include</code> equivale ao <code>import</code> em Python e Java, ou seja, amplia o conjunto
+  de funcionalidades que o programa pode usar;</p>
+</li>
+<li>
+<p>de fato, é justamente por causa do <code>#include &lt;stdio.h&gt;</code> que o programa pode
+  usar a função <code>printf</code>.</p>
+</li>
+<li>
+<p><code>printf</code> corresponde à <code>System.out.print</code> em Java, ou seja, é a função
+  responsável por imprimir texto no terminal.</p>
+</li>
+</ul>
+<p>No entanto, existe uma diferença de uso entre a <code>printf</code> do C e a
+<code>System.out.print</code> do Java. O código abaixo <em>não</em> vai funcionar.</p>
+<div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World: &quot;</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>A função <code>printf</code> usa um sistema de <em>interpolação</em> para exibir valores:</p>
+<div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World: %d, %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>O código acima significa "substitua as duas ocorrências de <code>%d</code> pelos valores de
+<code>n</code> e <code>m</code>, pela ordem". Parece complicado, mas note que na verdade é uma sintaxe
+mais limpa que a do Java, sem a necessidade de ficar somando strings.</p>
+<p>O símbolo a ser substituído é sempre <code>%</code> seguido de letras que representam o
+tipo do valor. A letra <code>d</code> (de "decimal") representa <code>int</code>, enquanto as letras
+<code>lf</code> (de "long float") representam <code>double</code>.</p>
+<div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World: %lf, %lf&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>Antes de apresentar outros conceitos, vamos praticar um pouco no ambiente.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">s</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Esse código <strong>errado</strong> já apareceu no laboratório anterior. Ele deveria
+calcular a soma de <code>1</code> a <code>10</code>. </li>
+</ul>
+<p>Rode o código corrigido no ambiente online, e faça ele imprimir o resultado
+com <code>printf()</code></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">s</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>Esse código <strong>errado</strong> já apareceu no laboratório anterior. Ele deveria calcular a
+<em>metade</em> da soma dos númereos de <code>1</code> a <code>10</code></li>
+</ul>
+<p>Rode o código corrigido no ambiente online, e faça ele imprimir o resultado</p>
+</div>
+<p>Vamos agora finalmente escrever um programa com interação de usuário!</p>
+<div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Digite um número: &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;O número digitado é: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>Enquanto a função <code>printf</code> usa o símbolo <code>%d</code> para indicar que quer "escrever um
+inteiro", a função <code>scanf</code> usa o símbolo <code>%d</code> para indicar que quer "ler um
+inteiro".</p>
+<p>Note também uma diferença importantíssima entre <code>printf</code> e <code>scanf</code>: apenas no
+segundo há um <code>&amp;</code> antes da variável. Os detalhes técnicos disso serão revelados
+na segunda aula de quarta, mas por enquanto mantenha em mente que <strong>se você
+esquecer o <code>&amp;</code>, o <code>scanf</code> não vai funcionar</strong>.</p>
+<p>Preparados para um exemplo mais avançado? O próximo mostra de uma só vez:</p>
+<ul>
+<li>
+<p>inclusão de outra biblioteca além de <code>stdio.h</code>;</p>
+</li>
+<li>
+<p>definição de uma constante;</p>
+</li>
+<li>
+<p>implementação e chamada de uma função própria.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NEWPAGE????????????????????????????????????????????</p>
+</div>
+<div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+    <span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp"></span>
+
+    <span class="cp">#define PI 3.141592</span>
+
+    <span class="kt">void</span> <span class="nf">print_trigo</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;seno: %lf, cosseno: %lf</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">angle</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Digite um ângulo em graus: &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">angle</span><span class="p">);</span>
+
+        <span class="n">print_trigo</span><span class="p">(</span><span class="n">angle</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>Vejamos o que há de novo no código:</p>
+<ul>
+<li>
+<p>adicionamos <code>#include &lt;math.h&gt;</code> e, por causa disso, pudemos usar as funções
+  trigonométricas <code>sin</code> e <code>cos</code> para calcular seno e cosseno respectivamente;</p>
+</li>
+<li>
+<p>definimos a constante <code>PI</code> como sendo o real <code>3.141592</code>;</p>
+</li>
+<li>
+<p>implementamos e chamamos a função <code>print_trigo</code>, que não precisa de <code>return</code>
+  por ser do tipo <code>void</code>;</p>
+</li>
+</ul>
+<p>A diferença entre variáveis e constantes é que, enquanto uma variável é... er...
+variável, uma constante é... er... constante, ou seja, não pode ser alterada: o
+código <code>PI = 5</code> causaria um erro.</p>
+<p>Por falar em <code>PI</code>, reparou que definimos a constante mas nunca a usamos? Na
+verdade, não foi um acidente...</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Qual é o problema no código acima? A dica já está dada: para ser resolvido,
+precisamos usar <code>PI</code>...</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Resolva o problema!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Não continue antes de validar suas respostas com um dos
+professores. Esse tipo de exercício será avaliado ao longo do semestre.</p>
+</div>
+<h2 id="exercicios-avancados">Exercícios Avançados<a class="headerlink" href="#exercicios-avancados" title="Permanent link">&para;</a></h2>
+<p>Mesmo que não dê tempo de fazer esses exercícios em sala, é muito importante
+que você os faça até quarta para desenferrujar programação e praticar C.</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Escreva uma função que recebe um inteiro e devolve o <em>módulo</em> desse inteiro.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Escreva uma função que recebe quatro inteiros, representando as coordenadas
+de dois pontos no plano cartesiano, e devolve a <em>distância de Manhattan</em>
+(pesquise) entre esses pontos. Vocês já fiazeram esse exercício em
+<em>Desenvolvimento Colaborativo Ágil</em>.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Escreva uma função que recebe um inteiro <em>n</em> e, para cada inteiro <em>i</em> entre
+<em>1</em> e <em>n</em>, imprime uma string conforme a seguinte regra:</p>
+<ul>
+<li>
+<p>"nenhum" se <em>i</em> não for múltiplo de <em>3</em> nem <em>5</em>;</p>
+</li>
+<li>
+<p>"apenas por três" se <em>i</em> for múltiplo de <em>3</em> mas não de <em>5</em>;</p>
+</li>
+<li>
+<p>"apenas por cinco" se <em>i</em> for múltiplo de <em>5</em> mas não de <em>3</em>;</p>
+</li>
+<li>
+<p>"por três e por cinco" se <em>i</em> for múltiplo de <em>3</em> e <em>5</em>.</p>
+</li>
+</ul>
+<p>Escreva duas versões: uma usando <code>while</code>s e outra usando <code>for</code>s.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Escreva uma função que recebe um inteiro <em>n</em> e imprime uma "arvorezinha"
+conforme a regra abaixo.</p>
+<p><em>n = 1</em>
+<div class="codehilite"><pre><span></span>     |
+</pre></div>
+<em>n = 2</em></p>
+<p><div class="codehilite"><pre><span></span>     |
+    /|\
+</pre></div>
+<em>n = 3</em></p>
+<p><div class="codehilite"><pre><span></span>      |
+     /|\
+    //|\\
+</pre></div>
+e assim em diante para <em>n = 4, 5, 6...</em>.</p>
+</div>
+<h2 id="apendice">Apêndice<a class="headerlink" href="#apendice" title="Permanent link">&para;</a></h2>
+<p>O <code>for</code> não foi abordado neste guia, mas será usado nas próximas aulas. Assim
+como o <code>for</code> padrão do Java, o <code>for</code> do C não funciona como o <code>for</code> do Python.
+Na verdade, é apenas um "açúcar sintático" que facilita a escrita de loops:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">instrução</span>
+        <span class="n">instrução</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>equivale a</p>
+<div class="codehilite"><pre><span></span>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">instrução</span>
+        <span class="n">instrução</span>
+        <span class="p">...</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>Em Java existe o <em>enhanced for</em>, que é mais parecido com o <code>for</code> do Python, mas
+não existe uma equivalência disso em C. Bem-vindos ao baixo nível! Não temos
+bolo, mas temos os ingredientes para você fazer um bolo.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Lab1/" title="Lab 1 - Conceitos Básicos" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Lab 1 - Conceitos Básicos
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 / Marcelo Hashimoto, Igor Montagner, Rafael Corsi, Eduardo Marossi
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
