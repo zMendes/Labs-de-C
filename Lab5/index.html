@@ -547,23 +547,37 @@
 <p>Este roteiro não apresenta nenhum conceito novo. Vocês podem fazê-lo apenas com o que já foi apresentado nos roteiros anteriores. Se você está precisando consultar materiais extras é um sinal de que sua solução é complicada demais. </p>
 </div>
 <p>Vamos neste roteiro revisar os conceitos dos dois roteiros anteriores fazendo modificações para tornar seu programa mais legível e organizado. </p>
-<ol>
-<li>Crie uma estrurura <code>imagem</code> para guardar largura, altura e a matriz da imagem. Você pode supor que ela tem tamanho máximo <span><span class="MathJax_Preview">640\times 480</span><script type="math/tex">640\times 480</script></span>. </li>
-<li>Modifique sua função <code>le_imagem</code> que carrega o conteúdo de uma imagem do terminal e escreve em uma estrutura <code>imagem</code>. Quais parâmetros sua função recebe?</li>
-<li>Modifique sua função <code>escreve_imagem</code> para receber um tipo <code>imagem</code>. Você deve usar apontadores nesta função?</li>
-<li>Modifique sua função <code>limiar</code> para receber um tipo <code>imagem</code>. Você deve usar apontadores nesta função?</li>
-</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Crie uma estrurura <code>imagem</code> para guardar largura, altura e a matriz da imagem. Você pode supor que ela tem tamanho máximo <span><span class="MathJax_Preview">640\times 480</span><script type="math/tex">640\times 480</script></span>. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Modifique sua função <code>le_imagem</code> que carrega o conteúdo de uma imagem do terminal e escreve em uma estrutura <code>imagem</code>. Quais parâmetros sua função recebe?</p>
+</div>
+<p>!!example<br />
+    Modifique sua função <code>escreve_imagem</code> para receber um tipo <code>imagem</code>. Você deve usar apontadores nesta função?</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Modifique sua função <code>limiar</code> para receber um tipo <code>imagem</code>. Você deve usar apontadores nesta função?</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Valide sua implementação com os professores antes de seguir. </p>
 </div>
 <h2 id="exercicios-avancados">Exercícios avançados<a class="headerlink" href="#exercicios-avancados" title="Permanent link">&para;</a></h2>
-<p>faça estes exercícios para praticar o uso de ponteiros, estruturas e matrizes.</p>
-<ol>
-<li><strong>Crop</strong>: crie uma função <code>crop</code> que corta uma imagem. Sua função deverá receber dois tipos <code>imagem</code>: um para a imagem original e outra para a imagem cortada. Quais parâmetros sua função deve receber? Você deve usar apontadores?</li>
-<li><strong>Borramento</strong>: crie uma função <em>blur</em> que faz o borramento de uma imagem. Ela deverá receber dois tipos <code>imagem</code>: um contendo a imagem original e um que receberá a imagem processada. Para borrar a imagem compute, para cada ponto, a média entre seu valor e o valor de seus vizinhos (incluindo diagonais).</li>
-<li><strong>Detector de bordas</strong>: você pode detectar bordas em uma imagem computando, para cada ponto, a diferença entre 4 vezes seu valor e o valor dos seus vizinhos. </li>
-</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><strong>Crop</strong>: crie uma função <code>crop</code> que corta uma imagem. Sua função deverá receber dois tipos <code>imagem</code>: um para a imagem original e outra para a imagem cortada. Quais parâmetros sua função deve receber? Você deve usar apontadores?</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><strong>Borramento</strong>: crie uma função <em>blur</em> que faz o borramento de uma imagem. Ela deverá receber dois tipos <code>imagem</code>: um contendo a imagem original e um que receberá a imagem processada. Para borrar a imagem compute, para cada ponto, a média entre seu valor e o valor de seus vizinhos (incluindo diagonais).</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><strong>Detector de bordas</strong>: você pode detectar bordas em uma imagem computando, para cada ponto, a diferença entre 4 vezes seu valor e o valor dos seus vizinhos. </p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Valide visualmente cada exercício antes de prosseguir. </p>
