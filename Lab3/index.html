@@ -32,15 +32,15 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
-        <title>Lab 3 - gcc - 5s - Labs de C - Insper Comp.</title>
+        <title>Lab 3 - Compilação usando GCC - 5s - Labs de C - Insper Comp.</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -56,7 +56,7 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -85,7 +85,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-3-gcc" tabindex="1" class="md-skip">
+      <a href="#lab-3-compilacao-usando-gcc" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -111,7 +111,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 3 - gcc
+                Lab 3 - Compilação usando GCC
               
             </span>
           
@@ -431,11 +431,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 3 - gcc
+        Lab 3 - Compilação usando GCC
       </label>
     
-    <a href="./" title="Lab 3 - gcc" class="md-nav__link md-nav__link--active">
-      Lab 3 - gcc
+    <a href="./" title="Lab 3 - Compilação usando GCC" class="md-nav__link md-nav__link--active">
+      Lab 3 - Compilação usando GCC
     </a>
     
       
@@ -495,6 +495,18 @@
   <li class="md-nav__item">
     <a href="../Lab4/" title="Lab 4 - Organização de dados" class="md-nav__link">
       Lab 4 - Organização de dados
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab5/" title="Lab 5 - juntando tudo" class="md-nav__link">
+      Lab 5 - juntando tudo
     </a>
   </li>
 
@@ -571,8 +583,8 @@
                   <a href="https://github.com/Insper/edit/master/docs/Lab3.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-3-gcc">Lab 3 - gcc<a class="headerlink" href="#lab-3-gcc" title="Permanent link">&para;</a></h1>
-<p>Ontem fizemos atividades usando um compilador online. Este leitura visa familiarizá-lo com as ferramentas de compilação de código em <em>C</em> usando o compilador <em>gcc</em>. O ambiente recomendado para a atividade é o <strong>Ubuntu 18.04 LTS</strong>. Outras configurações são possíveis, mas não daremos suporte a elas. </p>
+                <h1 id="lab-3-compilacao-usando-gcc">Lab 3 - Compilação usando GCC<a class="headerlink" href="#lab-3-compilacao-usando-gcc" title="Permanent link">&para;</a></h1>
+<p>Ontem fizemos atividades usando um compilador online. Apesar de ser prático, o ambiente online é muito limitado e não é adequado para as atividades do 5 semestre. Esta leitura visa familiarizá-lo com as ferramentas de compilação de código em <em>C</em> usando o compilador <em>gcc</em>. O ambiente recomendado para a atividade é o <strong>Ubuntu 18.04 LTS</strong>. Outras configurações são possíveis, mas não daremos suporte a elas. </p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Memorizar os comandos usados é muito mais fácil de você digitá-los no terminal ao invés de copiar e colar.</p>
@@ -586,13 +598,17 @@
 <div class="codehilite"><pre><span></span>$ gcc --version
 </pre></div>
 
-<p>Se você recebeu uma mensagem indicando que está usando a versão <code>7.3</code> então tudo está funcionando corretamente. </p>
-<div class="codehilite"><pre><span></span>    gcc-7 (Ubuntu 7.3.0-29ubuntu1) 7.3.0
+<p>Se você recebeu uma mensagem indicando que está usando a versão <code>7.4</code> então tudo está funcionando corretamente. </p>
+<div class="codehilite"><pre><span></span>    gcc-7 (Ubuntu 7.4.0-29ubuntu1) 7.3.0
     Copyright (C) 2017 Free Software Foundation, Inc.
     This is free software; see the source for copying conditions.  There is NO
     warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
 </pre></div>
 
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Esta padronização é importante para evitar dores de cabeça com comportamentos específicos de uma certa versão. Assim como o restante do ambiente, é possível que tudo funcine igual com outras versões do <code>gcc</code>. Porém, não daremos suporte a ambientes diferentes do padronizado neste lab. </p>
+</div>
 <p>Praticamente qualquer editor de texto ou IDE suporta colorização para <em>C</em>, porém recomendamos utilizar alguma
 ferramenta que também corrija erros de sintaxe. Editores como Visual Studio Code (com plugin para C/C++ e Make) e Eclipse CDT são boas escolhas por serem multi-plataforma e suficientemente completos. Eles também ajudarão muito no começo por indicarem erros simples de sintaxe como esquecer de um <code>;</code> ou usar <code>scanf</code> sem o <code>&amp;</code>.</p>
 <p>Após o mutirão as atividades de <em>Computação Embarcada</em> serão feitas em Windows usando Atmel Studio. Desafios de programação e Sistemas de Hardware e Software continuarão usando Ubuntu Linux. </p>
@@ -601,21 +617,28 @@ ferramenta que também corrija erros de sintaxe. Editores como Visual Studio Cod
 <p>Veremos mais detalhes de como essa transformação para código de máquina ocorre em Sistemas Hardware-Software. </p>
 <h2 id="compilacao-simples-via-linha-de-comando">Compilação (simples) via linha de comando<a class="headerlink" href="#compilacao-simples-via-linha-de-comando" title="Permanent link">&para;</a></h2>
 <p>Usamos o comando <code>gcc</code> para compilar programas em <em>C</em>. Para diminuir a quantidade de erros nos programas podemos passar como argumento algumas flags para exibir erros comuns e para fazer somente otimizações que não atrapalhem debug (<code>-Og</code>).</p>
-<div class="codehilite"><pre><span></span>$ gcc -Wall -pedantic -std<span class="o">=</span>c99 -Og arquivo.c -o executavel
+<div class="codehilite"><pre><span></span>$ gcc -Wall -pedantic -std<span class="o">=</span>gnu99 -Og -o executavel arquivo.c 
 </pre></div>
 
+<ul>
+<li><code>-Wall</code>: habilita todos avisos do compilador. Este modo indica possíveis erros cometidos no programa.</li>
+<li><code>-pedantic</code>: modo de compilação mais estrito e mostra ainda mais avisos</li>
+<li><code>-std=gnu99</code>: versão da linguagem C usada (<em>C99</em>) mais extensões para sistemas POSIX GNU (veremos o quê isto significa mais para frente).</li>
+<li><code>-Og</code>: somente aplicar otimizações que não atrapalham <em>debuging</em>. </li>
+<li><code>-o</code>: output -- nome do executável gerado</li>
+</ul>
 <p>Usando este comando podemos compilar um programa definido em um único arquivo <em>.c</em>.</p>
 <p><img alt="" src="../imgs/Lab3/fluxo.svg" width="600px" /></p>
 <div class="admonition example">
-<p class="admonition-title">Tarefa 1</p>
+<p class="admonition-title">Example</p>
 <p>Compile o arquivo <em>printf.c</em> usando o <code>gcc</code> e nomeie o executável <em>exemplo0</em>. Rode ele e verifique que tudo continua funcionando.</p>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Tarefa 2</p>
+<p class="admonition-title">Example</p>
 <p>Crie um programa que lê dois inteiros do terminal e determina se o primeiro é múltiplo do segundo. Se o segundo número passado for 0 seu programa deverá mostrar uma mensagem de erro. </p>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Tarefa 3</p>
+<p class="admonition-title">Example</p>
 <p>Adapte seu programa acima para que ele receba vários pares de números e só pare de ser executado quando receber o par "0 0".</p>
 </div>
 <h2 id="facilitando-o-uso-da-entrada-e-saida-padrao">Facilitando o uso da entrada e saída padrão<a class="headerlink" href="#facilitando-o-uso-da-entrada-e-saida-padrao" title="Permanent link">&para;</a></h2>
@@ -625,19 +648,20 @@ ferramenta que também corrija erros de sintaxe. Editores como Visual Studio Cod
 
 <p>O programa <code>prog</code> será executado como se o conteúdo do arquivo <em>arquivo_entrada.txt</em> tivesse sido digitado no terminal. Assim, podemos testar facilmente programas como o criado na Tarefa 3 acima sem precisar digitar sempre a mesma entrada. </p>
 <div class="admonition example">
-<p class="admonition-title">Tarefa 4</p>
+<p class="admonition-title">Example</p>
 <p>Crie um arquivo de entrada para o programa da tarefa 3 e verifique que o resultado do programa é o mesmo que quando você digita manualmente os valores no terminal. </p>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Tarefa 5</p>
+<p class="admonition-title">Example</p>
 <p>O mesmo vale para a saída, mas usando o caractere <code>&gt;</code>. Capture a saída do programa da tarefa 3 para um arquivo de nome <em>saida3.txt</em>.</p>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Tarefa 6</p>
+<p class="admonition-title">Example</p>
 <p>Podemos combinar o redirecionamento de entrada e saída no mesmo comando. Teste esta funcionalidade usando o programa da tarefa 3. </p>
 </div>
                 
                   
+                
                 
               
               
@@ -709,7 +733,7 @@ ferramenta que também corrija erros de sintaxe. Editores como Visual Studio Cod
       
     </div>
     
-      <script src="../assets/javascripts/application.1f8d785c.js"></script>
+      <script src="../assets/javascripts/application.808e90bb.js"></script>
       
         
         
@@ -729,6 +753,8 @@ ferramenta que também corrija erros de sintaxe. Editores como Visual Studio Cod
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../translate_admonitions.js"></script>
       
     
   </body>
