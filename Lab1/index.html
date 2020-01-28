@@ -63,6 +63,8 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/printing.css">
+    
     
       
     
@@ -90,21 +92,67 @@
       </a>
     
     
-      <header class="md-header" data-md-component="header">
+      <!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Application header -->
+
+<div class="md-printing-header">
+  <img class="cabecalho" src="/css/cabecalho.png">
+  <img class="logo" src="/css/logo.png">
+
+  <div class="frontmatter">
+    <div class="materia">  </div>
+    <div class="professor">  </div>
+    <div class="semestre">  </div>
+  </div>
+</div>
+<header class="md-header" data-md-component="header">
+
+
+
+  <!-- Top-level navigation -->
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
+
+      <!-- Link to home -->
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="5s - Labs de C - Insper Comp." class="md-header-nav__button md-logo">
+        <a href=".."
+            title="5s - Labs de C - Insper Comp."
+            class="md-header-nav__button md-logo">
           
             <i class="md-icon">code</i>
           
         </a>
-      </div>
+      </div>      
+      <!-- Button to toggle drawer -->
       <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+        <label class="md-icon md-icon--menu md-header-nav__button"
+            for="__drawer"></label>
       </div>
+      <!-- Header title -->
       <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+        <div class="md-flex__ellipsis md-header-nav__title"
+            data-md-component="title">
           
             <span class="md-header-nav__topic">
               5s - Labs de C - Insper Comp.
@@ -117,9 +165,14 @@
           
         </div>
       </div>
+
+      <!-- Button to open search dialogue -->
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          <label class="md-icon md-icon--search md-header-nav__button"
+              for="__search"></label>
+
+          <!-- Search interface -->
           
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -145,6 +198,8 @@
 </div>
         
       </div>
+
+      <!-- Repository containing source -->
       
         <div class="md-flex__cell md-flex__cell--shrink">
           <div class="md-header-nav__source">
@@ -486,8 +541,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../Lab4/" title="Lab 4 - Organização de dados" class="md-nav__link">
-      Lab 4 - Organização de dados
+    <a href="../Lab4/" title="Lab 4 - Arrays, Strings e Matrizes" class="md-nav__link">
+      Lab 4 - Arrays, Strings e Matrizes
     </a>
   </li>
 
