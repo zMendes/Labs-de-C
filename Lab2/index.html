@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -58,7 +58,7 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -117,10 +117,13 @@
 -->
 
 <!-- Application header -->
+<script>
+    window.site_url = "https://insper.github.io/Labs-de-C/";
+</script>
 
 <div class="md-printing-header">
-  <img class="cabecalho" src="https://insper.github.io/Labs-de-C//css/cabecalho.png">
-  <img class="logo" src="https://insper.github.io/Labs-de-C//css/logo.png">
+  <img class="cabecalho" src="https://insper.github.io/Labs-de-C/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/Labs-de-C/css/logo.png">
 
   <div class="frontmatter">
     <div class="materia">  </div>
@@ -210,7 +213,7 @@
 
   
 
-<a href="https://github.com/Insper/" title="Ir ao repositório" class="md-source" data-md-source="github">
+<a href="https://github.com/Insper/Labs-de-C/" title="Ir ao repositório" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -292,7 +295,7 @@
 
   
 
-<a href="https://github.com/Insper/" title="Ir ao repositório" class="md-source" data-md-source="github">
+<a href="https://github.com/Insper/Labs-de-C/" title="Ir ao repositório" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -548,8 +551,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../Lab5/" title="Lab 5 - juntando tudo" class="md-nav__link">
-      Lab 5 - juntando tudo
+    <a href="../Lab5/" title="Lab 5 - Ponteiros e `structs`" class="md-nav__link">
+      Lab 5 - Ponteiros e `structs`
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab6/" title="Lab 6 - juntando tudo" class="md-nav__link">
+      Lab 6 - juntando tudo
     </a>
   </li>
 
@@ -609,7 +624,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Insper/edit/master/docs/Lab2.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Insper/Labs-de-C/edit/master/docs/Lab2.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="lab-2-praticando">Lab 2 - Praticando<a class="headerlink" href="#lab-2-praticando" title="Permanent link">&para;</a></h1>
@@ -711,8 +726,8 @@ tipo do valor. A letra <code>d</code> (de "decimal") representa <code>int</code>
 </pre></div>
 
 <p>Antes de apresentar outros conceitos, vamos praticar um pouco no ambiente.</p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">s</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
 
@@ -730,8 +745,8 @@ calcular a soma de <code>1</code> a <code>10</code>. </li>
 <p>Rode o código corrigido no ambiente online, e faça ele imprimir o resultado
 com <code>printf()</code></p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -781,10 +796,6 @@ esquecer o <code>&amp;</code>, o <code>scanf</code> não vai funcionar</strong>.
 <p>implementação e chamada de uma função própria.</p>
 </li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>NEWPAGE????????????????????????????????????????????</p>
-</div>
 <div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
     <span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp"></span>
 
@@ -830,31 +841,30 @@ verdade, não foi um acidente...</p>
 <p>Qual é o problema no código acima? A dica já está dada: para ser resolvido,
 precisamos usar <code>PI</code>...</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Resolva o problema!</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
 <p>Não continue antes de validar suas respostas com um dos
 professores. Esse tipo de exercício será avaliado ao longo do semestre.</p>
 </div>
 <h2 id="exercicios-avancados">Exercícios Avançados<a class="headerlink" href="#exercicios-avancados" title="Permanent link">&para;</a></h2>
 <p>Mesmo que não dê tempo de fazer esses exercícios em sala, é muito importante
 que você os faça até quarta para desenferrujar programação e praticar C.</p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Escreva uma função que recebe um inteiro e devolve o <em>módulo</em> desse inteiro.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Escreva uma função que recebe quatro inteiros, representando as coordenadas
 de dois pontos no plano cartesiano, e devolve a <em>distância de Manhattan</em>
 (pesquise) entre esses pontos. Vocês já fiazeram esse exercício em
 <em>Desenvolvimento Colaborativo Ágil</em>.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Escreva uma função que recebe um inteiro <em>n</em> e, para cada inteiro <em>i</em> entre
 <em>1</em> e <em>n</em>, imprime uma string conforme a seguinte regra:</p>
 <ul>
@@ -873,8 +883,8 @@ de dois pontos no plano cartesiano, e devolve a <em>distância de Manhattan</em>
 </ul>
 <p>Escreva duas versões: uma usando <code>while</code>s e outra usando <code>for</code>s.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Escreva uma função que recebe um inteiro <em>n</em> e imprime uma "arvorezinha"
 conforme a regra abaixo.</p>
 <p><em>n = 1</em>
@@ -917,7 +927,6 @@ não existe uma equivalência disso em C. Bem-vindos ao baixo nível! Não temos
 bolo, mas temos os ingredientes para você fazer um bolo.</p>
                 
                   
-                
                 
               
               
@@ -989,7 +998,7 @@ bolo, mas temos os ingredientes para você fazer um bolo.</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.1f8d785c.js"></script>
       
         
         

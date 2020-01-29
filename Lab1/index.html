@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -58,7 +58,7 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -117,10 +117,13 @@
 -->
 
 <!-- Application header -->
+<script>
+    window.site_url = "https://insper.github.io/Labs-de-C/";
+</script>
 
 <div class="md-printing-header">
-  <img class="cabecalho" src="https://insper.github.io/Labs-de-C//css/cabecalho.png">
-  <img class="logo" src="https://insper.github.io/Labs-de-C//css/logo.png">
+  <img class="cabecalho" src="https://insper.github.io/Labs-de-C/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/Labs-de-C/css/logo.png">
 
   <div class="frontmatter">
     <div class="materia">  </div>
@@ -210,7 +213,7 @@
 
   
 
-<a href="https://github.com/Insper/" title="Ir ao repositório" class="md-source" data-md-source="github">
+<a href="https://github.com/Insper/Labs-de-C/" title="Ir ao repositório" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -292,7 +295,7 @@
 
   
 
-<a href="https://github.com/Insper/" title="Ir ao repositório" class="md-source" data-md-source="github">
+<a href="https://github.com/Insper/Labs-de-C/" title="Ir ao repositório" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -555,8 +558,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../Lab5/" title="Lab 5 - juntando tudo" class="md-nav__link">
-      Lab 5 - juntando tudo
+    <a href="../Lab5/" title="Lab 5 - Ponteiros e `structs`" class="md-nav__link">
+      Lab 5 - Ponteiros e `structs`
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab6/" title="Lab 6 - juntando tudo" class="md-nav__link">
+      Lab 6 - juntando tudo
     </a>
   </li>
 
@@ -623,7 +638,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Insper/edit/master/docs/Lab1.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Insper/Labs-de-C/edit/master/docs/Lab1.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="lab-1-conceitos-basicos">Lab 1 - Conceitos Básicos<a class="headerlink" href="#lab-1-conceitos-basicos" title="Permanent link">&para;</a></h1>
@@ -691,10 +706,6 @@ fantástica função faz... nada de útil. Ela apenas copia o valor do parâmetr
 palavras, apenas devolve o valor original de <code>level</code>, sem fazer nenhum tipo de
 processamento. Yay!</p>
 <p>Vejamos o contexto no qual essa função está sendo chamada.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>NEWPAGE????????????????????????????????????????????</p>
-</div>
 <div class="codehilite"><pre><span></span>    <span class="cp">#ifdef PARTE3</span>
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">IMG_HEIGHT</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">IMG_HEIGHT</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -725,15 +736,15 @@ imagem permanece inalterada. Vamos fazer algo mais interessante?</p>
    para termos certeza que você está passando por todo o processo.</p>
 </li>
 </ol>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>O valor de um pixel é um número inteiro entre <code>0</code> e <code>255</code>. Quanto mais alto
 o valor, mais claro é o pixel. Sabendo disso, altere <code>process_pixel</code> para
 <em>negativizar</em> a imagem, ou seja, transformar pixels claros em escuros e
 vice-versa.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Agora altere <code>process_pixel</code> para <em>escurecer</em> a imagem: cada pixel deve
 ficar com a metade de sua luminosidade original.</p>
 </div>
@@ -752,8 +763,8 @@ ficar com a metade de sua luminosidade original.</p>
 </pre></div>
 
 <p>Sabendo disso...</p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Altere <code>process_pixel</code> para receber um segundo parâmetro, também inteiro, e
 <em>limiarizar</em> a imagem:</p>
 <ul>
@@ -770,15 +781,15 @@ ficar com a metade de sua luminosidade original.</p>
 para evitar erros de compilação. Passe <code>127</code> como o segundo parâmetro da
 chamada.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Altere <code>process_pixel</code> para manipular o <em>brilho</em> da imagem: use o segundo
 parâmetro, adicionado no exercício anterior, como um valor que é <em>somado</em> ao
 pixel. Faça vários testes, passando múltiplos valores como o segundo
 parâmetro da chamada.</p>
 </div>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <p>Altere <code>process_pixel</code> para manipular o <em>contraste</em> da imagem: use o segundo
 parâmetro como um valor que <em>multiplica</em> o pixel. Novamente, faça vários
 testes, passando múltiplos valores como o segundo parâmetro da chamada.</p>
@@ -787,12 +798,16 @@ testes, passando múltiplos valores como o segundo parâmetro da chamada.</p>
 básicos (<code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>), execução condicional (<code>if/else</code>) e a estrutura
 básica de funções. Agora vamos sair do Atmel!</p>
 <h2 id="exercicios-intermediarios">Exercícios Intermediários<a class="headerlink" href="#exercicios-intermediarios" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p>Lembrete: Para cada questão, validar a resposta com um dos professores antes de
+continuar para a próxima.</p>
+</div>
 <p>Aliás, não apenas do Atmel... vamos sair do <em>computador</em> por alguns instantes e
 fazer os próximos exercícios no papel. É muito importante que, pelo menos nesse
 começo, você não fique excessivamente dependente do computador e da IDE. Saiba
 fazer pelo menos o básico sozinho, pois isso faz muita diferença na
 produtividade.</p>
-<div class="admonition question">
+<div class="admonition question short">
 <p class="admonition-title">Question</p>
 <p>Como esperado, a sintaxe de <code>while</code> em C também é como em Java. Sabendo
 disso, considere o código abaixo, que calcula a soma dos números de <code>1</code> a
@@ -807,51 +822,37 @@ disso, considere o código abaixo, que calcula a soma dos números de <code>1</c
     <span class="p">}</span>
 </pre></div>
 
-<p>Ou melhor, que <em>deveria</em> calcular a soma dos números de <code>1</code> a <code>10</code>. Qual é o
-problema com esse código?</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Não continuem antes de validar suas respostas com um dos
-professores. Esse tipo de exercício será avaliado ao longo do semestre.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>NEWPAGE????????????????????????????????????????????</p>
-</div>
-<p>Podemos identificar no código os três problemas abaixo.</p>
+<p>Ou melhor, que <em>deveria</em> calcular a soma dos números de <code>1</code> a <code>10</code>.</p>
+<ol>
+<li>
+<p>Qual é o problema com esse código?</p>
+</li>
+<li>
+<p>Reescreva o código, evitando os três problemas acima.</p>
+</li>
+</ol>
+<details class="note"><summary>Solução</summary><p>Podemos identificar no código os três problemas abaixo.</p>
 <ol>
 <li>
 <p>A variável <code>s</code> não é inicializada. Em Java, o valor padrão de uma variável
-   <code>int</code> é <code>0</code>, mas em C essa garantia não existe! De fato, uma variável em C é
-   inicializada com <em>lixo de memória</em>, ou seja, um valor baseado nos <em>bits</em> que
-   já estavam escritos no pedaço de memória que foi reservado para a variável.
-   Esses bits são totalmente imprevisíveis!</p>
+  <code>int</code> é <code>0</code>, mas em C essa garantia não existe! De fato, uma variável em C é
+  inicializada com <em>lixo de memória</em>, ou seja, um valor baseado nos <em>bits</em> que
+  já estavam escritos no pedaço de memória que foi reservado para a variável.
+  Esses bits são totalmente imprevisíveis!</p>
 </li>
 <li>
 <p>Se a condição do <code>while</code> é <code>i &lt; 10</code>, então o último valor de <code>i</code> somado a <code>s</code>
-   é <code>9</code> e não <code>10</code>. A soma está incompleta!</p>
+  é <code>9</code> e não <code>10</code>. A soma está incompleta!</p>
 </li>
 <li>
 <p>A variável <code>i</code> deveria ter sido inicializada com o valor <code>1</code>. A rigor, esse
-   problema não torna o código <em>incorreto</em>, pois a soma de <code>0</code> é inócua, mas
-   torna o código <em>ineficiente</em>, pois uma iteração é desperdiçada.</p>
+  problema não torna o código <em>incorreto</em>, pois a soma de <code>0</code> é inócua, mas
+  torna o código <em>ineficiente</em>, pois uma iteração é desperdiçada.</p>
 </li>
 </ol>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>Reescreva o código, evitando os três problemas acima.</p>
+</details>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Não continuem antes de validar suas respostas com um dos
-professores. Esse tipo de exercício será avaliado ao longo do semestre.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>NEWPAGE????????????????????????????????????????????</p>
-</div>
-<div class="admonition question">
+<div class="admonition question short">
 <p class="admonition-title">Question</p>
 <p>Considere agora o código abaixo, que deveria calcular a <em>metade</em> da soma dos
 números de <code>1</code> a <code>10</code>.</p>
@@ -866,18 +867,10 @@ números de <code>1</code> a <code>10</code>.</p>
   <span class="p">}</span>
 </pre></div>
 
-<p>Qual é o problema com esse código?</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Não continuem antes de validar suas respostas com um dos
-professores. Esse tipo de exercício será avaliado ao longo do semestre.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>NEWPAGE????????????????????????????????????????????</p>
-</div>
-<p>Quando os dois parâmetros do operador <code>/</code> são inteiros, o resultado também é um
+<ol>
+<li>Qual é o problema com esse código?</li>
+</ol>
+<details class="note"><summary>Solução</summary><p>Quando os dois parâmetros do operador <code>/</code> são inteiros, o resultado também é um
 inteiro. Se a divisão não for exata, <em>a parte fracionária é truncada</em>. Isso
 significa que o que deveria ser a soma de <code>0.5</code>, <code>1</code>, <code>1.5</code>, <code>2</code>, <code>2.5</code>, etc. é
 na verdade a soma de <code>0</code>, <code>1</code>, <code>1</code>, <code>2</code>, <code>2</code>, etc.</p>
@@ -929,9 +922,10 @@ como sendo de certo tipo.</p>
 
 <p>Note que um casting de <code>int</code> para <code>double</code> é praticamente inócuo, mas no casting
 de <code>double</code> para <code>int</code> perde-se a informação fracionária.</p>
+</details>
+</div>
                 
                   
-                
                 
               
               
@@ -1003,7 +997,7 @@ de <code>double</code> para <code>int</code> perde-se a informação fracionári
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.1f8d785c.js"></script>
       
         
         

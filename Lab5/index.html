@@ -34,15 +34,15 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
-        <title>Lab 5 - juntando tudo - 5s - Labs de C - Insper Comp.</title>
+        <title>Lab 5 - Ponteiros e `structs` - 5s - Labs de C - Insper Comp.</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.96cc8824.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -58,7 +58,7 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-5-juntando-tudo" tabindex="1" class="md-skip">
+      <a href="#lab-5-ponteiros-e-structs" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -117,10 +117,13 @@
 -->
 
 <!-- Application header -->
+<script>
+    window.site_url = "https://insper.github.io/Labs-de-C/";
+</script>
 
 <div class="md-printing-header">
-  <img class="cabecalho" src="https://insper.github.io/Labs-de-C//css/cabecalho.png">
-  <img class="logo" src="https://insper.github.io/Labs-de-C//css/logo.png">
+  <img class="cabecalho" src="https://insper.github.io/Labs-de-C/css/cabecalho.png">
+  <img class="logo" src="https://insper.github.io/Labs-de-C/css/logo.png">
 
   <div class="frontmatter">
     <div class="materia">  </div>
@@ -161,7 +164,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 5 - juntando tudo
+                Lab 5 - Ponteiros e `structs`
               
             </span>
           
@@ -210,7 +213,7 @@
 
   
 
-<a href="https://github.com/Insper/" title="Ir ao repositório" class="md-source" data-md-source="github">
+<a href="https://github.com/Insper/Labs-de-C/" title="Ir ao repositório" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -292,7 +295,7 @@
 
   
 
-<a href="https://github.com/Insper/" title="Ir ao repositório" class="md-source" data-md-source="github">
+<a href="https://github.com/Insper/Labs-de-C/" title="Ir ao repositório" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -512,11 +515,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 5 - juntando tudo
+        Lab 5 - Ponteiros e `structs`
       </label>
     
-    <a href="./" title="Lab 5 - juntando tudo" class="md-nav__link md-nav__link--active">
-      Lab 5 - juntando tudo
+    <a href="./" title="Lab 5 - Ponteiros e `structs`" class="md-nav__link md-nav__link--active">
+      Lab 5 - Ponteiros e `structs`
     </a>
     
       
@@ -530,8 +533,57 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exercicios-avancados" class="md-nav__link">
-    Exercícios avançados
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enderecos" class="md-nav__link">
+    Endereços
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-regra-de-ouro" class="md-nav__link">
+    A Regra de Ouro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apontadores" class="md-nav__link">
+    Apontadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-unica-excecao" class="md-nav__link">
+    A Única Exceção
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao-de-apontadores" class="md-nav__link">
+    Aplicação de Apontadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    Structs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apontadores-para-structs" class="md-nav__link">
+    Apontadores para Structs
   </a>
   
 </li>
@@ -544,6 +596,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab6/" title="Lab 6 - juntando tudo" class="md-nav__link">
+      Lab 6 - juntando tudo
+    </a>
   </li>
 
         
@@ -573,8 +637,57 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exercicios-avancados" class="md-nav__link">
-    Exercícios avançados
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enderecos" class="md-nav__link">
+    Endereços
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-regra-de-ouro" class="md-nav__link">
+    A Regra de Ouro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apontadores" class="md-nav__link">
+    Apontadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-unica-excecao" class="md-nav__link">
+    A Única Exceção
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao-de-apontadores" class="md-nav__link">
+    Aplicação de Apontadores
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structs" class="md-nav__link">
+    Structs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apontadores-para-structs" class="md-nav__link">
+    Apontadores para Structs
   </a>
   
 </li>
@@ -595,53 +708,432 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Insper/edit/master/docs/Lab5.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Insper/Labs-de-C/edit/master/docs/Lab5.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-5-juntando-tudo">Lab 5 - juntando tudo<a class="headerlink" href="#lab-5-juntando-tudo" title="Permanent link">&para;</a></h1>
+                <h1 id="lab-5-ponteiros-e-structs">Lab 5 - Ponteiros e <code>structs</code><a class="headerlink" href="#lab-5-ponteiros-e-structs" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Este roteiro não apresenta nenhum conceito novo. Vocês podem fazê-lo apenas com o que já foi apresentado nos roteiros anteriores. Se você está precisando consultar materiais extras é um sinal de que sua solução é complicada demais. </p>
+<p>Por favor, façam esta atividade em dupla e lembrem das regras.</p>
+<ol>
+<li>
+<p>Os enunciados de programação dizem "o que" a função/programa deve fazer,
+ mas não dizem "como" deve fazer. Não pergunte "como", pois descobrir isso é
+ justamente uma das habilidades que vocês precisam exercitar para as três
+ disciplinas.</p>
+</li>
+<li>
+<p>Ao terminar um exercício de programação, chame um dos professores para
+ testemunhar o programa funcionando e validar o código. Não avance no guia
+ até fazer isso, para termos certeza que você está passando por todo o
+ processo.</p>
+</li>
+</ol>
 </div>
-<p>Vamos neste roteiro revisar os conceitos dos dois roteiros anteriores fazendo modificações para tornar seu programa mais legível e organizado. </p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Crie uma estrurura <code>imagem</code> para guardar largura, altura e a matriz da imagem. Você pode supor que ela tem tamanho máximo <span><span class="MathJax_Preview">640\times 480</span><script type="math/tex">640\times 480</script></span>. </p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Modifique sua função <code>le_imagem</code> que carrega o conteúdo de uma imagem do terminal e escreve em uma estrutura <code>imagem</code>. Quais parâmetros sua função recebe?</p>
-</div>
-<p>!!example<br />
-    Modifique sua função <code>escreve_imagem</code> para receber um tipo <code>imagem</code>. Você deve usar apontadores nesta função?</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Modifique sua função <code>limiar</code> para receber um tipo <code>imagem</code>. Você deve usar apontadores nesta função?</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Valide sua implementação com os professores antes de seguir. </p>
-</div>
-<h2 id="exercicios-avancados">Exercícios avançados<a class="headerlink" href="#exercicios-avancados" title="Permanent link">&para;</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Crop</strong>: crie uma função <code>crop</code> que corta uma imagem. Sua função deverá receber dois tipos <code>imagem</code>: um para a imagem original e outra para a imagem cortada. Quais parâmetros sua função deve receber? Você deve usar apontadores?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Borramento</strong>: crie uma função <em>blur</em> que faz o borramento de uma imagem. Ela deverá receber dois tipos <code>imagem</code>: um contendo a imagem original e um que receberá a imagem processada. Para borrar a imagem compute, para cada ponto, a média entre seu valor e o valor de seus vizinhos (incluindo diagonais).</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Detector de bordas</strong>: você pode detectar bordas em uma imagem computando, para cada ponto, a diferença entre 4 vezes seu valor e o valor dos seus vizinhos. </p>
+<h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h2>
+<p>Podemos dizer que praticamente todos os conceitos vistos até agora são
+adaptações de conceitos vistos anteriormente em <em>Python</em> e <em>Java</em>. Neste guia,
+finalmente exploramos alguns conceitos "exclusivos" de <em>C</em> e outras linguagens
+de baixo nível.</p>
+<p>Para introduzir o primeiro deles, vamos começar com uma pergunta.</p>
+<div class="admonition question medium">
+<p class="admonition-title">Question</p>
+<p>Considerando o que vimos anteriormente sobre <code>scanf</code>, <em>passagem por valor</em> e
+<em>passagem por referência</em>, porque a chamada</p>
+<div class="codehilite"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</pre></div>
+
+<p>não funcionaria sem o <code>&amp;</code>? Pode parecer estranho, mas você não precisa saber a
+definição de <code>&amp;</code> para poder responder!</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Valide visualmente cada exercício antes de prosseguir. </p>
+<p>Não vá para a próxima página antes de validar suas respostas com um dos professores.</p>
+</div>
+<h2 id="enderecos">Endereços<a class="headerlink" href="#enderecos" title="Permanent link">&para;</a></h2>
+<p>Como vimos anteriormente, os conjuntos de variáveis de duas funções diferentes
+são totalmente separados. Ou seja, no exemplo abaixo,</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">n</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">foo</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>a função <code>bar</code> devolve <code>0</code>, pois a variável <code>n</code> de <code>foo</code> é diferente da variável
+<code>n</code> de <code>bar</code>, apesar das duas terem o mesmo nome.</p>
+<p>Cabe enfatizar que é bom que esse seja o comportamento padrão! Geralmente
+queremos evitar situações nas quais uma função altera variáveis de outra função.
+Essas situações são conhecidas como <em>efeitos colaterais</em> e costumam ser
+indesejadas por tornarem o código mais imprevisível, aumentarem a probabilidade
+de bugs e dificultarem testes.</p>
+<p>No entanto, se soubermos muito bem o que estamos fazendo, efeitos colaterais
+podem ser úteis. O <code>scanf</code> é o exemplo óbvio disso! Então vamos mostrar como
+permiti-los.</p>
+<p>O problema do exemplo anterior é que o <em>nome</em> de uma variável é um identificador
+<em>local</em>, ou seja, vale apenas dentro do escopo da função na qual a variável foi
+declarada. Mas a variável também possui um identificador <em>global</em> que é seu
+<em>endereço</em>. Se uma função sabe o endereço de uma variável, essa variável pode
+ser modificada pela função mesmo se não foi declarada dentro dela.</p>
+<p>Para entender melhor o conceito de endereço, basta pensar na memória como um
+"vetorzão" e na variável como um elemento desse "vetorzão". O endereço, nessa
+analogia, seria o índice desse elemento.</p>
+<p>E como obtemos o endereço de uma variável? Basta usar o operador unário <code>&amp;</code>.
+Isso explica o que acontece em relação ao <code>scanf</code>: o que a função recebe não é o
+valor de uma variável, e sim seu endereço. Assim, ganha o poder de escrever nela
+o valor digitado pelo usuário. Então lembre-se: <strong>sempre que encontrar o símbolo
+<code>&amp;</code>, leia como se ele fosse a expressão "endereço de"</strong>.</p>
+<div class="codehilite"><pre><span></span>    <span class="o">&amp;</span><span class="n">a</span>         <span class="c1">// lê-se &quot;endereço de a&quot;</span>
+    <span class="o">&amp;</span><span class="n">b</span>         <span class="c1">// lê-se &quot;endereço de b&quot;</span>
+    <span class="o">&amp;</span><span class="n">abobrinha</span> <span class="c1">// lê-se &quot;endereço de abobrinha&quot;</span>
+</pre></div>
+
+<p>Mas para podermos passar endereços para lá e para cá, precisamos de variáveis
+especiais que guardam endereços. Essas variáveis são conhecidas como
+<em>apontadores</em> ou <em>ponteiros</em> (<em>pointers</em> em inglês) e indicadas pelo símbolo
+<code>*</code>. Antes de dar mais detalhes, vamos dar uma dica simples e valiosa em relação
+a esse símbolo.</p>
+<h2 id="a-regra-de-ouro">A Regra de Ouro<a class="headerlink" href="#a-regra-de-ouro" title="Permanent link">&para;</a></h2>
+<p>Dizemos que um apontador <code>p</code> <em>aponta</em> para uma variável <code>v</code> se o endereço de <code>v</code>
+está armazenado em <code>p</code>. Visualmente, podemos representar isso da seguinte forma:</p>
+<p><center>
+    <img src="../imgs/day5-pointers/apontador.png" width="200px">
+</center></p>
+<p>Esta figura é uma representação visual de <code>p</code> apontar para <code>v</code>. Nesse caso, <code>v</code> é uma variável
+inteira cujo valor é <code>5</code> e <code>p</code> é um apontador cujo valor é o endereço de
+<code>v</code>. Acostume-se com essa representação visual, aliás, pois ela será muito usada em
+<em>Desafios de Programação</em>!</p>
+<p>Mas o que realmente queremos enfatizar aqui é que, a partir dessa terminologia,
+podemos derivar uma pequena regra que ajuda muito a compreender códigos que usam
+<code>*</code> no contexto de endereços e apontadores: <strong>sempre que encontrar o símbolo
+<code>*</code>, leia como se ele fosse a expressão "variável apontada por"</strong>.</p>
+<p>Sem contexto essa regra parece estranha, então vamos aos exemplos!</p>
+<h2 id="apontadores">Apontadores<a class="headerlink" href="#apontadores" title="Permanent link">&para;</a></h2>
+<p>Vamos declarar o apontador <code>p</code> do exemplo acima.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</pre></div>
+
+<p>Por que estamos usando <code>int</code>? Porque apontadores em C <em>sabem o tipo da variável
+para a qual apontam</em>, portanto esse tipo deve estar na declaração. Assim, a
+combinação de <code>int</code> seguido por <code>*</code> representa a declaração de um apontador para
+variável inteira.</p>
+<p>Difícil lembrar? Então note que essa sintaxe é totalmente coerente com a regra
+de ouro! A declaração <code>int v</code> significa "<code>v</code> é inteira", enquanto a declaração
+<code>int *p</code> significa "variável apontada por <code>p</code> é inteira".</p>
+<p>Vamos agora armazenar o endereço de <code>v</code> em <code>p</code>, reproduzindo a situação da
+figura.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">v</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+
+    <span class="n">v</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">;</span>
+</pre></div>
+
+<p>Esse código faz sentido para você? Vejamos se você está entendendo...</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Adicionar <code>v = &amp;5</code> ao exemplo acima seria válido?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Adicionar <code>v = p</code> ao exemplo acima seria válido?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Adicionar <code>v = &amp;p</code> ao exemplo acima seria válido?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Adicionar <code>p = 5</code> ao exemplo acima seria válido?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Adicionar <code>p = &amp;5</code> ao exemplo acima seria válido?</p>
+</div>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Adicionar <code>p = v</code> ao exemplo acima seria válido?</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Não continue antes de validar suas respostas com um dos professores.</p>
+</div>
+<p>Agora vejam como o exemplo abaixo é interessante.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">v</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+
+    <span class="n">v</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">;</span>
+
+    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+</pre></div>
+
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Qual é a saída desse exemplo? Pense na regra de ouro.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Não vá para a próxima página antes de validar suas respostas com um dos
+professores.</p>
+</div>
+<details class="note"><summary>Resposta</summary><p>A saída é <code>10</code>, pois a linha <code>*p = 10</code>, pela regra de ouro, pode ser lida como
+"variável apontada por <code>p</code> recebe <code>10</code>". E qual é a variável apontada por <code>p</code>?</p>
+</details>
+<p>De fato, podemos usar <code>*p</code> como sinônimo de <code>v</code> ao longo do código.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">v</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+
+    <span class="n">v</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">);</span>
+</pre></div>
+
+<p>Obviamente, esse uso só é válido a partir do momento em que <code>p</code> recebe o
+endereço de <code>v</code>. Antes de receber a primeira atribuição, <code>p</code> guarda lixo de
+memória, como qualquer variável.</p>
+<h2 id="a-unica-excecao">A Única Exceção<a class="headerlink" href="#a-unica-excecao" title="Permanent link">&para;</a></h2>
+<p>A única exceção à regra de ouro é a situação na qual o apontador é inicializado
+na declaração.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">;</span>
+</pre></div>
+
+<p>Nesse caso, a regra é coerente com a declaração, mas não é coerente com a
+atribuição. Quem recebe o endereço de <code>v</code> é <code>p</code> e não a variável apontada por
+<code>p</code>. Aliás, nesse momento, nem existe uma variável apontada por <code>p</code>, já que <code>p</code>
+está com lixo de memória.</p>
+<p>Mas essa é a única exceção com a qual você precisa se preocupar!</p>
+<h2 id="aplicacao-de-apontadores">Aplicação de Apontadores<a class="headerlink" href="#aplicacao-de-apontadores" title="Permanent link">&para;</a></h2>
+<p>Uma aplicação comum de apontadores é seu uso para contornar o fato de que o
+<code>return</code> de uma função devolve um único valor. Considere a função abaixo, que
+calcula ao mesmo tempo a soma e a subtração de dois inteiros. Essa função está
+<strong>errada</strong>, pois o <code>return</code> de dois valores separados por vírgula é permitido em
+Python mas <strong>não</strong> em C. Apenas um valor pode ser devolvido em C.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">int</span> <span class="nf">sum_sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">sum</span><span class="p">,</span> <span class="n">sub</span><span class="p">;</span> <span class="c1">// oops...</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>Para contornar isso, podemos fazer uma função que não devolve nada, ou seja é do
+tipo <code>void</code>, mas <em>escreve a resposta em duas variáveis cujos endereços são
+recebidos como parâmetros</em>.</p>
+<div class="codehilite"><pre><span></span>    <span class="kt">void</span> <span class="nf">sum_sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">psum</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">psub</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">*</span><span class="n">psum</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+        <span class="o">*</span><span class="n">psub</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>Entender o uso dos símbolos <code>*</code> acima não deveria ser um problema se você
+absorveu bem a regra de ouro!</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Sim, é feio. Muito feio. Mas funciona.</p>
+</div>
+<p>Repare que chamamos os parâmetros de <code>psum</code> e <code>psub</code> em vez de <code>sum</code> e <code>sub</code>.
+Não faria sentido chamar de <code>sum</code> e <code>sub</code>, pois eles não armazenam os resultados
+em si e sim os endereços das variáveis onde eles devem ser armazenados.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Escreva um programa completo que:</p>
+<ol>
+<li>
+<p>usa <code>scanf</code> para ler dois inteiros dados pelo usuário;</p>
+</li>
+<li>
+<p>usa <code>sum_sub</code> para calcular a soma e a subtração desses dois inteiros;</p>
+</li>
+<li>
+<p>usa <code>printf</code> para mostrar os dois resultados.</p>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Escreva um programa completo que:</p>
+<ol>
+<li>
+<p>usa <code>scanf</code> para ler dois inteiros dados pelo usuário;</p>
+</li>
+<li>
+<p>supondo que os dois inteiros representam a altura e a largura de um
+ retângulo, usa uma função para calcular o perímetro e a área desse
+ retângulo;</p>
+</li>
+<li>
+<p>usa <code>printf</code> para mostrar os dois resultados.</p>
+</li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Não continue antes de validar suas respostas com um dos professores.</p>
+</div>
+<p>Endereços e apontadores são considerados conceitos particularmente difíceis de
+entender para quem está aprendendo C pela primeira vez. Mantenha sempre a regra
+de ouro em mente para auxiliar nesse processo.</p>
+<h2 id="structs">Structs<a class="headerlink" href="#structs" title="Permanent link">&para;</a></h2>
+<p>Outro conceito introduzido neste guia é o de <code>struct</code>. Trata-se de um recurso
+que responde a uma das dúvidas mais antigas da humanidade: <em>como podemos
+armazenar múltiplos valores em uma única variável</em>?</p>
+<p>(meu conhecimento de história talvez seja um pouco questionável)</p>
+<p>Structs são tipos compostos que armazenam múltiplos valores. Para vocês que já
+aprenderam orientação a objetos, pode-se dizer que eles são mais ou menos como
+"objetos sem métodos, apenas atributos".</p>
+<p>Suponha por exemplo que, para um programa de geometria analítica, queremos
+definir um tipo que representa um ponto do plano cartesiano e, portanto, possui
+dois valores: a coordenada horizontal e a coordenada vertical. Declarar um
+struct que representa esse tipo é mais ou menos simples.</p>
+<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">ponto</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">};</span>
+</pre></div>
+
+<p>Dizemos "mais ou menos" por causa de dois detalhes chatos: o primeiro é esse
+maldito ponto e vírgula no final, que você <em>com certeza</em> vai esquecer em vários
+momentos da vida. O segundo é o fato de que essa declaração não cria um tipo
+chamado <code>ponto</code>, mas sim um tipo chamado <code>struct ponto</code>. Ou seja, para declarar
+uma variável desse tipo novo precisamos escrever</p>
+<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">ponto</span> <span class="n">p</span><span class="p">;</span>
+</pre></div>
+
+<p>o que é um tanto quanto verborrágico.</p>
+<p>Contra o primeiro detalhe não podemos fazer muita coisa, mas contra o segundo
+existe um recurso muito útil em C que é o <code>typedef</code>. Esse recurso nos permite
+criar "apelidos" para tipos. Assim, podemos reescrever a declaração do struct da
+seguinte forma</p>
+<div class="codehilite"><pre><span></span>    <span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span> <span class="n">ponto</span><span class="p">;</span>
+</pre></div>
+
+<p>que significa "struct anônimo com apelido <code>ponto</code>". Agora sim, para declarar uma
+variável desse tipo novo podemos escrever simplesmente</p>
+<div class="codehilite"><pre><span></span>    <span class="n">ponto</span> <span class="n">p</span><span class="p">;</span>
+</pre></div>
+
+<p>E como usar essa variável? Basta usar o operador <code>.</code> para acessar seus valores,
+como em objetos Java.</p>
+<div class="codehilite"><pre><span></span>    <span class="n">p</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
+</pre></div>
+
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Reescreva a função de duas aulas atrás para calcular a <em>distância de Manhattan</em>
+entre dois pontos. Mas, agora que temos o struct acima, a função deve
+receber duas variáveis do tipo <code>ponto</code> em vez de receber quatro variáveis do
+tipo <code>int</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Escreva um programa completo que:</p>
+<ol>
+<li>
+<p>usa <code>scanf</code> para ler quatro inteiros dados pelo usuário;</p>
+</li>
+<li>
+<p>supondo que esses inteiros representam as coordenadas de dois pontos
+ cartesianos, usa a função anterior para calcular a distância de Manhattan;</p>
+</li>
+<li>
+<p>usa <code>printf</code> para mostrar o resultado.</p>
+</li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Refaça os dois exercícios anteriores, substituindo a distância de Manhattan
+pela distância <em>Euclidiana</em>. (pesquise)</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Não continue antes de validar suas respostas com um dos professores.</p>
+</div>
+<h2 id="apontadores-para-structs">Apontadores para Structs<a class="headerlink" href="#apontadores-para-structs" title="Permanent link">&para;</a></h2>
+<p>Quando misturamos os conceitos de apontador e struct, algo que também será feito
+em <em>Desafios de Programação</em>, a sintaxe vira um pesadelo críptico.</p>
+<div class="codehilite"><pre><span></span>    <span class="n">ponto</span> <span class="n">p</span><span class="p">;</span>
+    <span class="n">ponto</span> <span class="o">*</span><span class="n">pp</span><span class="p">;</span>
+
+    <span class="n">pp</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">;</span>
+
+    <span class="p">(</span><span class="o">*</span><span class="n">pp</span><span class="p">).</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">pp</span><span class="p">).</span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</pre></div>
+
+<p>Pare. Respire. Não continue a ler até aceitar que o código acima faz sentido.
+Lembre da regra de ouro.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Por que <code>pp.x</code> não faria sentido no exemplo acima?</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Não vá para a próxima página antes de validar suas respostas com um dos
+professores.</p>
+</div>
+<p>Felizmente, os criadores do C perceberam que a sintaxe fica meio pesada nesse
+caso e adicionaram o operador "setinha" (<code>-&gt;</code>) para ajudar. Grosso modo, esse
+operador significa "operador <code>.</code>, mas em relação à variável apontada". Ou seja,
+o trecho</p>
+<div class="codehilite"><pre><span></span>    <span class="p">(</span><span class="o">*</span><span class="n">pp</span><span class="p">).</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">(</span><span class="o">*</span><span class="n">pp</span><span class="p">).</span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</pre></div>
+
+<p>pode ser substituído pelo trecho</p>
+<div class="codehilite"><pre><span></span>    <span class="n">pp</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">pp</span><span class="o">-&gt;</span><span class="n">y</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+</pre></div>
+
+<p>Pare e respire de novo.</p>
+<div class="admonition question short">
+<p class="admonition-title">Question</p>
+<p>Por que <code>p-&gt;x</code> não faria sentido no exemplo acima?</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Não continue antes de validar suas respostas com um dos professores.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Escreva uma função</p>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="n">medio</span><span class="p">(</span><span class="n">ponto</span> <span class="n">a</span><span class="p">,</span> <span class="n">ponto</span> <span class="n">b</span><span class="p">,</span> <span class="n">ponto</span> <span class="o">*</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+
+<p>que recebe dois pontos e o endereço de um terceiro ponto. Essa função deve
+calcular o <em>ponto médio</em> dos dois pontos e escrever o resultado desse cálculo
+no terceiro. Simples, não? Porém, há um detalhe: essa função <em>deve considerar
+inválido o caso em que os dois pontos são exatamente iguais</em>.</p>
+<p>Reparou que, apesar de devolver a resposta via apontador, a função é do tipo
+<code>int</code>? É porque ela deve devolver um código indicando se o caso foi válido ou
+não. Se os dois pontos são iguais, ela deve devolver <code>0</code> e não escrever nada
+no terceiro. Se os dois pontos são diferentes, ela deve devolver <code>1</code> e
+escrever o resultado no terceiro.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Não considerem terminado antes de validar suas respostas com um dos professores.</p>
 </div>
                 
                   
-                
                 
               
               
@@ -675,6 +1167,20 @@
           </a>
         
         
+          <a href="../Lab6/" title="Lab 6 - juntando tudo" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                Lab 6 - juntando tudo
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
       </nav>
     </div>
   
@@ -699,7 +1205,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../assets/javascripts/application.1f8d785c.js"></script>
       
         
         
