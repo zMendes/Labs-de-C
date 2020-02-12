@@ -503,13 +503,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#apendice" class="md-nav__link">
-    Apêndice
-  </a>
-  
-</li>
-      
       
       
       
@@ -597,13 +590,6 @@
         <li class="md-nav__item">
   <a href="#exercicios-avancados" class="md-nav__link">
     Exercícios Avançados
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apendice" class="md-nav__link">
-    Apêndice
   </a>
   
 </li>
@@ -719,8 +705,8 @@ tipo do valor. A letra <code>d</code> (de "decimal") representa <code>int</code>
 <div class="codehilite"><pre><span></span>    <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
     <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kt">double</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">n</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="mf">2.1</span><span class="p">;</span>
 
         <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello World: %lf, %lf&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
 
@@ -866,6 +852,28 @@ de dois pontos no plano cartesiano, e devolve a <em>distância de Manhattan</em>
 (pesquise) entre esses pontos. Vocês já fiazeram esse exercício em
 <em>Desenvolvimento Colaborativo Ágil</em>.</p>
 </div>
+<p>Assim como o <code>for</code> padrão do Java, o <code>for</code> do C não funciona como o <code>for</code> do Python.
+Na verdade, é apenas um "açúcar sintático" que facilita a escrita de loops:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">instrução</span>
+        <span class="n">instrução</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>equivale a</p>
+<div class="codehilite"><pre><span></span>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">instrução</span>
+        <span class="n">instrução</span>
+        <span class="p">...</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<p>Em Java existe o <em>enhanced for</em>, que é mais parecido com o <code>for</code> do Python, mas
+não existe uma equivalência disso em C. Bem-vindos ao baixo nível! Não temos
+bolo, mas temos os ingredientes para você fazer um bolo.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>Escreva uma função que recebe um inteiro <em>n</em> e, para cada inteiro <em>i</em> entre
@@ -904,30 +912,6 @@ conforme a regra abaixo.</p>
 </pre></div>
 e assim em diante para <em>n = 4, 5, 6...</em>.</p>
 </div>
-<h2 id="apendice">Apêndice<a class="headerlink" href="#apendice" title="Permanent link">&para;</a></h2>
-<p>O <code>for</code> não foi abordado neste guia, mas será usado nas próximas aulas. Assim
-como o <code>for</code> padrão do Java, o <code>for</code> do C não funciona como o <code>for</code> do Python.
-Na verdade, é apenas um "açúcar sintático" que facilita a escrita de loops:</p>
-<div class="codehilite"><pre><span></span>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">instrução</span>
-        <span class="n">instrução</span>
-        <span class="p">...</span>
-    <span class="p">}</span>
-</pre></div>
-
-<p>equivale a</p>
-<div class="codehilite"><pre><span></span>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">instrução</span>
-        <span class="n">instrução</span>
-        <span class="p">...</span>
-        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-</pre></div>
-
-<p>Em Java existe o <em>enhanced for</em>, que é mais parecido com o <code>for</code> do Python, mas
-não existe uma equivalência disso em C. Bem-vindos ao baixo nível! Não temos
-bolo, mas temos os ingredientes para você fazer um bolo.</p>
                 
                   
                 
