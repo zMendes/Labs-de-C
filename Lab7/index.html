@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://insper.github.io/Labs-de-C/Lab6/">
+        <link rel="canonical" href="https://insper.github.io/Labs-de-C/Lab7/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Lab 6 - juntando tudo - 5s - Labs de C - Insper Comp.</title>
+        <title>Lab 7 - Manipulando bits - 5s - Labs de C - Insper Comp.</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-6-juntando-tudo" tabindex="1" class="md-skip">
+      <a href="#lab-7-manipulando-bits" tabindex="1" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -164,7 +164,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 6 - juntando tudo
+                Lab 7 - Manipulando bits
               
             </span>
           
@@ -260,7 +260,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../mutirao/" class="md-tabs__link md-tabs__link--active">
+        <a href="../mutirao/" class="md-tabs__link">
           Mutirão
         </a>
       
@@ -273,7 +273,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../Lab7/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link md-tabs__link--active">
           Labs
         </a>
       
@@ -340,12 +340,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Mutirão
@@ -529,49 +527,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lab 6 - juntando tudo
-      </label>
-    
-    <a href="./" title="Lab 6 - juntando tudo" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../Lab6/" title="Lab 6 - juntando tudo" class="md-nav__link">
       Lab 6 - juntando tudo
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Índice</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#exercicios-avancados" class="md-nav__link">
-    Exercícios avançados
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -596,10 +556,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Labs
@@ -615,11 +577,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Lab7/" title="Lab 7 - Manipulando bits" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 7 - Manipulando bits
+      </label>
+    
+    <a href="./" title="Lab 7 - Manipulando bits" class="md-nav__link md-nav__link--active">
       Lab 7 - Manipulando bits
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-binario-bitwise" class="md-nav__link">
+    Operadores binário (Bitwise)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -649,8 +649,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#exercicios-avancados" class="md-nav__link">
-    Exercícios avançados
+  <a href="#operadores-binario-bitwise" class="md-nav__link">
+    Operadores binário (Bitwise)
   </a>
   
 </li>
@@ -671,52 +671,132 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Insper/Labs-de-C/edit/master/docs/Lab6.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Insper/Labs-de-C/edit/master/docs/Lab7.md" title="Editar esta página" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-6-juntando-tudo">Lab 6 - juntando tudo<a class="headerlink" href="#lab-6-juntando-tudo" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Este roteiro não apresenta nenhum conceito novo. Vocês podem fazê-lo apenas com o que já foi apresentado nos roteiros anteriores. Se você está precisando consultar materiais extras é um sinal de que sua solução é complicada demais. </p>
+                <h1 id="lab-7-manipulando-bits">Lab 7 - Manipulando bits<a class="headerlink" href="#lab-7-manipulando-bits" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Esse lab. considera o GCC como compilador.</p>
 </div>
-<p>Vamos neste roteiro revisar os conceitos dos dois roteiros anteriores fazendo modificações para tornar seu programa mais legível e organizado. </p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Crie uma estrurura <code>imagem</code> para guardar largura, altura e a matriz da imagem. Você pode supor que ela tem tamanho máximo <span><span class="MathJax_Preview">640\times 480</span><script type="math/tex">640\times 480</script></span>. </p>
+<p>Na linguagem <code>C</code> a menor unidade de armazenamento existente é a do <code>char</code>, que possui 8 bits. Mesmo sendo considerada de 'baixo nível' não possuímos uma maneira 'built-in' na linguagem de armazenar e/ou processar um único <code>bit</code>. Alguns compiladores para sistemas embarcados fornecem um tipo bit, porém isso é exclusivo dessas plataformas.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No ARM possuímos os seguintes tipos definidos:</p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>Size in bits</th>
+<th>natural alignment in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char</td>
+<td>8</td>
+<td>1   (byte-aligned)</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16</td>
+<td>2   (halfword-aligned)</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32</td>
+<td>4   (word-aligned)</td>
+</tr>
+<tr>
+<td>long</td>
+<td>32</td>
+<td>4   (word-aligned)</td>
+</tr>
+<tr>
+<td>long long</td>
+<td>64</td>
+<td>8   (doubleword-aligned)</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32</td>
+<td>4   (word-aligned)</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64</td>
+<td>8   (doubleword-aligned)</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>64</td>
+<td>8   (doubleword-aligned)</td>
+</tr>
+<tr>
+<td>All pointers</td>
+<td>32</td>
+<td>4   (word-aligned)</td>
+</tr>
+<tr>
+<td>_Bool (C only[a])</td>
+<td>8</td>
+<td>1   (byte-aligned)</td>
+</tr>
+</tbody>
+</table>
+<p>[a] <strong>stdbool.h can be used to define the bool macro in C</strong>.</p>
+<blockquote>
+<p>fonte: <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0491c/Babfcgfc.html">http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0491c/Babfcgfc.html</a></p>
+</blockquote>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Modifique sua função <code>le_imagem</code> que carrega o conteúdo de uma imagem do terminal e escreve em uma estrutura <code>imagem</code>. Quais parâmetros sua função recebe?</p>
+<p>A manipulação de bits é muito importante quando utilizamos a linguagem para: interagir com o hardware; verificar e manipular tipos; otimizações. Por exemplo, imagine uma função que recebe um <code>unsigned int</code> que possui um pixel codificado no formato <code>RGB</code> (8 bits de Vermelho (R), 8 bits de Verde (G) e 8 bits de Azul (B)) e deseja retornar um <code>unsigned char</code> (8 bits) que possui apenas o valor correspondente da cor Verde.</p>
+<div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">get_green</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">px</span><span class="p">)</span>
+</pre></div>
+
+<p>Conforme demonstrado na figura a seguir:</p>
+<p><img alt="" src="../imgs/Lab7/get_red.svg" width="500" /></p>
+<p>Como realizar isso em C? O segredo será manipular os bits de entrada deslocandoos para direita 16 bits:</p>
+<p><img alt="" src="../imgs/Lab7/get_red2.svg" width="400" /></p>
+<p>No deslocamento (<code>shift</code>) os bits que 'saem' são descartados e os que 'entram' para formar a nova palavrão são sempre <code>0</code>. No exemplo anterior estamos visualizando o deslocamento de blocos de 8 bits, porém em C só conseguimos mover blocos de <code>1 bit</code>. Para isso, iremos usar o operador <code>&gt;&gt;</code> que possui a esquerda a palavra que será deslocada e a direita a quantidade de bits que serão movidos. </p>
+<p>Utilizando o conceito de shift, a função <code>get_red</code> possui a seguinte implementação:</p>
+<div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="nf">get_green</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">px</span><span class="p">){</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">px</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+<blockquote>
+<p>Para evitar warnings de type cast seria necessário usar: <code>return((unsigned char) (px &gt;&gt; 16))</code>, mas optamos pode deixar o exemplo na forma mais simples.`</p>
+</blockquote>
+<h2 id="operadores-binario-bitwise">Operadores binário (Bitwise)<a class="headerlink" href="#operadores-binario-bitwise" title="Permanent link">&para;</a></h2>
+<p>Em C possuímos os seguintes operadores binários:</p>
+<div class="admonition note">
+<p>Considerar para os exemplos a seguir:</p>
+<ul>
+<li>A = <code>0011 1100</code></li>
+<li>B = <code>0000 1101</code> </li>
+</ul>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Modifique sua função <code>escreve_imagem</code> para receber um tipo <code>imagem</code>. Você deve usar apontadores nesta função?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>Modifique sua função <code>limiar</code> para receber um tipo <code>imagem</code>. Você deve usar apontadores nesta função?</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Valide sua implementação com os professores antes de seguir. </p>
-</div>
-<h2 id="exercicios-avancados">Exercícios avançados<a class="headerlink" href="#exercicios-avancados" title="Permanent link">&para;</a></h2>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Crop</strong>: crie uma função <code>crop</code> que corta uma imagem. Sua função deverá receber dois tipos <code>imagem</code>: um para a imagem original e outra para a imagem cortada. Quais parâmetros sua função deve receber? Você deve usar apontadores?</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Borramento</strong>: crie uma função <em>blur</em> que faz o borramento de uma imagem. Ela deverá receber dois tipos <code>imagem</code>: um contendo a imagem original e um que receberá a imagem processada. Para borrar a imagem compute, para cada ponto, a média entre seu valor e o valor de seus vizinhos (incluindo diagonais).</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Detector de bordas</strong>: você pode detectar bordas em uma imagem computando, para cada ponto, a diferença entre 4 vezes seu valor e o valor dos seus vizinhos. </p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Valide visualmente cada exercício antes de prosseguir. </p>
-</div>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td>Realiza a operação <code>AND</code> bit a bit</td>
+<td><code>A &amp; B</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>0000 1100</code></td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>Realiza a operação <code>OR</code> bit a bit</td>
+<td><code>A | B</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>0011 1101</code></td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -737,7 +817,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Lab5/" title="Lab 5 - Ponteiros e `structs`" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Lab6/" title="Lab 6 - juntando tudo" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -746,25 +826,11 @@
                 <span class="md-footer-nav__direction">
                   Anterior
                 </span>
-                Lab 5 - Ponteiros e `structs`
+                Lab 6 - juntando tudo
               </span>
             </div>
           </a>
         
-        
-          <a href="../Lab7/" title="Lab 7 - Manipulando bits" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Próximo
-                </span>
-                Lab 7 - Manipulando bits
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
