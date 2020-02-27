@@ -606,8 +606,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#operadores-binario-bitwise" class="md-nav__link">
-    Operadores binário (Bitwise)
+  <a href="#comecando" class="md-nav__link">
+    Começando
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submetendo" class="md-nav__link">
+    Submetendo
   </a>
   
 </li>
@@ -649,8 +656,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#operadores-binario-bitwise" class="md-nav__link">
-    Operadores binário (Bitwise)
+  <a href="#comecando" class="md-nav__link">
+    Começando
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submetendo" class="md-nav__link">
+    Submetendo
   </a>
   
 </li>
@@ -675,9 +689,9 @@
                 
                 
                 <h1 id="lab-7-manipulando-bits">Lab 7 - Manipulando bits<a class="headerlink" href="#lab-7-manipulando-bits" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Esse lab. considera o GCC como compilador.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Esse lab deve ser realizado no Linux.</p>
 </div>
 <p>Na linguagem <code>C</code> a menor unidade de armazenamento existente é a do <code>char</code>, que possui 8 bits. Mesmo sendo considerada de 'baixo nível' não possuímos uma maneira 'built-in' na linguagem de armazenar e/ou processar um único <code>bit</code>. Alguns compiladores para sistemas embarcados fornecem um tipo bit, porém isso é exclusivo dessas plataformas.</p>
 <div class="admonition note">
@@ -749,57 +763,36 @@
 <p>fonte: <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0491c/Babfcgfc.html">http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0491c/Babfcgfc.html</a></p>
 </blockquote>
 </div>
-<p>A manipulação de bits é muito importante quando utilizamos a linguagem para: interagir com o hardware; verificar e manipular tipos; otimizações. Por exemplo, imagine uma função que recebe um <code>unsigned int</code> que possui um pixel codificado no formato <code>RGB</code> (8 bits de Vermelho (R), 8 bits de Verde (G) e 8 bits de Azul (B)) e deseja retornar um <code>unsigned char</code> (8 bits) que possui apenas o valor correspondente da cor Verde.</p>
-<div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">get_green</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">px</span><span class="p">)</span>
-</pre></div>
-
-<p>Conforme demonstrado na figura a seguir:</p>
-<p><img alt="" src="../imgs/Lab7/get_red.svg" width="500" /></p>
-<p>Como realizar isso em C? O segredo será manipular os bits de entrada deslocandoos para direita 16 bits:</p>
-<p><img alt="" src="../imgs/Lab7/get_red2.svg" width="400" /></p>
-<p>No deslocamento (<code>shift</code>) os bits que 'saem' são descartados e os que 'entram' para formar a nova palavrão são sempre <code>0</code>. No exemplo anterior estamos visualizando o deslocamento de blocos de 8 bits, porém em C só conseguimos mover blocos de <code>1 bit</code>. Para isso, iremos usar o operador <code>&gt;&gt;</code> que possui a esquerda a palavra que será deslocada e a direita a quantidade de bits que serão movidos. </p>
-<p>Utilizando o conceito de shift, a função <code>get_red</code> possui a seguinte implementação:</p>
-<div class="codehilite"><pre><span></span><span class="kt">unsigned</span> <span class="kt">char</span> <span class="nf">get_green</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">px</span><span class="p">){</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">px</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-
-<blockquote>
-<p>Para evitar warnings de type cast seria necessário usar: <code>return((unsigned char) (px &gt;&gt; 16))</code>, mas optamos pode deixar o exemplo na forma mais simples.`</p>
-</blockquote>
-<h2 id="operadores-binario-bitwise">Operadores binário (Bitwise)<a class="headerlink" href="#operadores-binario-bitwise" title="Permanent link">&para;</a></h2>
-<p>Em C possuímos os seguintes operadores binários:</p>
-<div class="admonition note">
-<p>Considerar para os exemplos a seguir:</p>
+<p>A manipulação de bits é muito importante quando utilizamos a linguagem para: interagir com o hardware; verificar e manipular tipos; otimizações. Os objetivos deste lab são</p>
+<ol>
+<li>obter familiaridade com as operações bitwise em <em>C</em></li>
+<li>aplicá-las para resolver problemas envolvendo múltiplas operações</li>
+<li>usar máscaras de bits para sets bits específicos em um inteiro 32 bits</li>
+<li>usar máscaras de bits para checar se bits específicos estão ligados</li>
+</ol>
+<h2 id="comecando">Começando<a class="headerlink" href="#comecando" title="Permanent link">&para;</a></h2>
+<p>O lab está localizado na pasta: <code>code/07-bits-1/</code> e contém os seguintes arquivos:</p>
 <ul>
-<li>A = <code>0011 1100</code></li>
-<li>B = <code>0000 1101</code> </li>
+<li><code>exercicios.c</code>: Arquivo em C que deve ser editado</li>
+<li><code>Makefile</code>: Arquivo de configuração e execução do lab</li>
 </ul>
+<p>O lab possui teste unitário para as funções que deverão ser desenvolvidas, para
+executar os testes basta abrir o terminal na pasta e executar o comando <code>make</code>.</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> code/07-bits-1/
+make
+</pre></div>
+
+<p>Você deve implementar as funções de forma sequencial, sendo a primeira a que aparece no começo do arquivo <code>exercicio.c</code>. Leia os comentários do código para entender. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Teste o código para cada função feita, não deixe acumular.</p>
 </div>
-<table>
-<thead>
-<tr>
-<th>Operador</th>
-<th>Descrição</th>
-<th>Exemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&amp;</code></td>
-<td>Realiza a operação <code>AND</code> bit a bit</td>
-<td><code>A &amp; B</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>0000 1100</code></td>
-</tr>
-<tr>
-<td><code>|</code></td>
-<td>Realiza a operação <code>OR</code> bit a bit</td>
-<td><code>A | B</code> <img alt="➡" class="emojione" src="https://cdn.jsdelivr.net/emojione/assets/svg/27a1.svg" title=":arrow_right:" /> <code>0011 1101</code></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Fonte: <a href="https://www.tutorialspoint.com/ansi_c/c_bits_manipulation.htm">https://www.tutorialspoint.com/ansi_c/c_bits_manipulation.htm</a></p>
-</blockquote>
+<h2 id="submetendo">Submetendo<a class="headerlink" href="#submetendo" title="Permanent link">&para;</a></h2>
+<p>Ao terminal o lab você deve dar um <code>push</code> no seu repositório.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Todos os testes devem estar passando para considerar a entrega concluída.</p>
+</div>
                 
                   
                 
